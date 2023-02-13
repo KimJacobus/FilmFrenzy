@@ -1,3 +1,7 @@
+import NavbarSignUp from './navbar/navbar-singup';
+import NavbarHome from './navbar/navbarHome';
+import NavbarSignIn from './navbar/navbar-singin';
+
 
 function App() {
   const title = "wassup";
@@ -6,17 +10,22 @@ function App() {
 
 
     <div className="App">
+      <NavbarSignUp/>
+      <NavbarSignIn/>
+       <NavbarHome />
+      <div className="content">
 
-      
+     
     
 
 
     <h1 className="text-3xl font-bold underline">
-      Hello world! {title}
+            <p> Hello world! {title}</p> 
 
 
-
+      
     </h1>
+    </div>
     </div>
 
 
