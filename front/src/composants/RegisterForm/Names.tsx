@@ -14,7 +14,7 @@ const Names = () => {
 
     return (  
       
-<div className="nameform">
+<div className="nameform relative">
 
 <div className="flex w-screen h-auto justify-center">
 <div className="p-6 mx-1 rounded shadow-lg bg-slate-900 mt-1">
