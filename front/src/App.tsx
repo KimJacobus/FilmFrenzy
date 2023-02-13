@@ -1,10 +1,9 @@
 
-export function App() {
+function App() {
   const title = "wassup";
 
   return (
-    
-    <body className="h-full w-full bg-slate-200">
+
 
     <div className="App">
 
@@ -20,7 +19,6 @@ export function App() {
     </h1>
     </div>
 
-    </body>
 
   ) 
 }
