@@ -1,12 +1,16 @@
-import NavbarSignUp from './navbar/navbar-singup';
-import NavbarHome from './navbar/navbarHome';
-import NavbarSignIn from './navbar/navbar-singin';
+import NavbarSignUp from './composants/navbar/NavbarSingUp';
+import NavbarSignIn from './composants/navbar/NavbarSingIn';
 
 import Names from "./composants/RegisterForm/Names"
 import Emailuser from "./composants/RegisterForm/Emailuser"
 import Password from "./composants/RegisterForm/Password"
-import Home from "./composants/Home";
+import Home from "./pages/Home";
 import LoginUser from './composants/LoginForm/Loginuser';
+import navbarHome from "./composants/navbar/NavbarHome"
+
+
+import NavbarHome from './composants/navbar/NavbarHome';
+import Landing from "./pages/Landing"
 
 function App() {
   return (
@@ -15,12 +19,15 @@ function App() {
     <div className="App">
      
      <div className="Navbar">
+     
      <NavbarSignUp/>
       <NavbarSignIn/>
        <NavbarHome />
+
       </div>
 
       <div className="content"> 
+       
         <Home />
 
       <h1 className="text-3xl font-bold underline">
@@ -32,6 +39,8 @@ function App() {
       <Emailuser />
       <Password />
       <LoginUser />
+      
+
     <div className="contentTWo">
       
     </div>
