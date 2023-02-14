@@ -2,10 +2,72 @@
 
 -----------------------------
 
-## branches :
+## L'équipe : 
 
-- master : fichiers docker.env etc; 
+- Sebastien
+- Laurent
+- Maxime
+- Kim
 
-- development : ici on mélange tous les branches; 
+## description du projêt : 
 
-- fork le repo, ou creé tes propres branches pour chaque ticket; 
+- streaming platform pour vous et vos ami(e)s;
+
+## techs :
+
+- [front-end] : React, Typescript, Framer, Tailwind;
+
+- [back-end] : nodeJs, mysql, PHP, Express.JS, JS web tokens;
+
+
+## schéma du DB :
+
+![dbfilmfrenzy](readme-assets/DatabaseGetflix.png)
+
+
+
+## doc général du projêt :
+
+- Deliverables : User Story
+
+Create streaming site inspired (Netflix, Hulu, Paramount+, Disney +, HBO max, Apple TV+, Amazon)
+
+1. User Story: As an User I want to connect  to a streaming service
+    - [ ] Landing
+    - [ ] Sign up 
+    - [ ] Login
+    - [ ] Forget Password
+        - [ ] Mail system - Mailchimp
+    - [ ] Reset Password
+
+2. User Story: As an user I want to view films
+    - [ ] Interact with public api and populate db
+    - [ ] Movies show all 
+    - [ ] Movies show one
+
+
+3. User Story: As an user I want to search for films and filter my search
+    - [ ]  Search movies by title, mots clés 
+    - [ ] Filter Movie by 
+        - [ ] Label
+        - [ ] categorie
+
+4. User Story:  As an user I  want to rate the films I watch
+    - [ ] Rating System on Movie show one  
+
+
+
+
+## sources : 
+
+- tailwind components : https://tailwind-elements.com/
+
+
+
+
+
+
+
+
+
+

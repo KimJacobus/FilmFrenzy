@@ -1,25 +1,27 @@
+import Names from "./composants/RegisterForm/Names"
+import Emailuser from "./composants/RegisterForm/Emailuser"
+import Password from "./composants/RegisterForm/Password"
+import Home from "./composants/Home";
 
 function App() {
-  const title = "wassup";
-
   return (
-
-
-    <div className="App">
-
-      
     
+     <div className="Navbar">
 
+      <div className="content"> 
+        <Home />
 
-    <h1 className="text-3xl font-bold underline">
-      Hello world! {title}
+        <Names />
+      <Emailuser />
+      <Password />
 
+        </div> 
+        <div className="bg">
 
+        </div>
+        
 
-    </h1>
-    </div>
-
-
+        </div>
   ) 
 }
 export default App
