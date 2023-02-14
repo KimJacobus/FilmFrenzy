@@ -4,7 +4,7 @@ const NavbarHome = () => {
     const [navbar, setNavbar] = useState(false);
 
     return (
-        <nav className="w-full bg-gradient-to-r from-cyan-500 to--600 shadow">
+        <nav className="w-full bg-gradient-to-r from-gray-500 to--600 shadow">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
