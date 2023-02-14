@@ -4,12 +4,12 @@ const NavbarHome = () => {
     const [navbar, setNavbar] = useState(false);
 
     return (
-        <nav className="w-full bg-gradient-to-r from-cyan-500 to--600 shadow">
+        <nav className="w-full bg-slate-900">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="javascript:void(0)">
-                            <h2 className="text-2xl font-bold text-white">FrenzyMovies</h2>
+                            <h2 className="text-2xl font-bold text-white">FilmFriendzy</h2>
                         </a>
                         <div className="md:hidden">
                             <button
