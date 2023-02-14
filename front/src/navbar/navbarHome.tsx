@@ -4,7 +4,7 @@ const NavbarHome = () => {
     const [navbar, setNavbar] = useState(false);
 
     return (
-        <nav className="w-full bg-gradient-to-r from-gray-500 to--600 shadow">
+        <nav className="w-full bg-gradient-to-r from-zinc-600 to-slate-900 shadow">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -77,13 +77,13 @@ const NavbarHome = () => {
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">
                     <a
                         href="javascript:void(0)"
-                        className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-full shadow hover:bg-gray-800"
+                        className="inline-block w-full px-4 py-2 text-center text-white bg-blue-600 rounded-full shadow hover:bg-blue-500"
                     >
                         User
                     </a>
                     <a
                         href="javascript:void(0)"
-                        className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                        className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-red-600 rounded-md shadow hover:bg-red-500"
                     >
                         Log out 
                     </a>
@@ -93,13 +93,13 @@ const NavbarHome = () => {
                 <div className="hidden space-x-2 md:inline-block">
                     <a
                         href="javascript:void(0)"
-                        className="px-4 py-2 text-white rounded-full bg-gray-600 rounded-md-full shadow hover:bg-gray-800"
+                        className="px-4 py-2 text-white rounded-full bg-blue-600 rounded-md-full shadow hover:bg-blue-500 "
                     >
                         User
                     </a>
                     <a
                         href="javascript:void(0)"
-                        className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                        className="px-4 py-2 text-white bg-red-600 rounded-md shadow hover:bg-red-500"
                     >
                         Log out
                     </a>

@@ -6,44 +6,42 @@ import Names from "./composants/RegisterForm/Names"
 import Emailuser from "./composants/RegisterForm/Emailuser"
 import Password from "./composants/RegisterForm/Password"
 import Home from "./composants/Home";
+import LoginUser from './composants/LoginForm/Loginuser';
 
 function App() {
   return (
 
 
-
     <div className="App">
-      <NavbarSignUp/>
+     
+     <div className="Navbar">
+     <NavbarSignUp/>
       <NavbarSignIn/>
        <NavbarHome />
-      <div className="content">
-
-    
-     <div className="Navbar">
+      </div>
 
       <div className="content"> 
         <Home />
 
-    <h1 className="text-3xl font-bold underline">
-            <p> Hello world! {title}</p> 
-
-
-      
-    </h1>
+      <h1 className="text-3xl font-bold underline">
+            <p className='text-white'> Hello world!</p> 
+       </h1>
     </div>
-    </div>
-
-        <Names />
+    
+      <Names />
       <Emailuser />
       <Password />
-
+      <LoginUser />
+    <div className="contentTWo">
+      
+    </div>
         </div> 
-        <div className="bg">
-
-        </div>
         
 
-        </div>
+       
+        
+
+        
   ) 
 }
 export default App
