@@ -1,4 +1,5 @@
 import NFBG from '../assets/pictures/NFBG.jpg';
+import LoginUser from '../composants/LoginForm/Loginuser';
 import Emailuser from '../composants/RegisterForm/Emailuser';
 
 const Landing = () => {
@@ -18,14 +19,14 @@ const Landing = () => {
         <div className='flex justify-center'>
             
             <div id="FFTitle" className='absolute z-10'>
-                <h1 className='text-3xl lg:text-8xl text-white mt-10 text-center'>Welcome to <br></br>Film Friendzy!</h1>
-                <p className='text-2xl lg:text-5xl text-white mt-4 text-center'>Movie nights with friends from anywhere!</p>
+                <h1 className='varela text-3xl lg:text-8xl text-white mt-10 text-center'>Welcome to <br></br>Film Friendzy!</h1>
+                <p className='roboto text-2xl lg:text-5xl text-white mt-4 text-center'>Movie nights with friends from anywhere!</p>
 
         <div className="mt-10 opacity-90">
 
             <h1 className='text-1xl text-white text-center'>already have an account ?</h1>
 
-                <Emailuser />
+                <LoginUser />
                 </div>
 
 
