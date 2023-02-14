@@ -11,9 +11,10 @@ const NavbarHome = () => {
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <Link to="/">
-                            <h2 className="text-2xl font-bold text-white hover:text-red-400">FilmFriendzy</h2>
+       <Link to="/">
+                            <h2 className="varela text-2xl font-bold text-white hover:text-red-400">FilmFriendzy</h2>
                         </Link>
+
                         <div className="md:hidden">
                             <button
                                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -62,17 +63,17 @@ const NavbarHome = () => {
                            <li className="text-white hover:text-indigo-200">
                                 <a href="/">Home</a>
                             </li>
-                            <li className="text-white  hover:text-indigo-200">
+                            <li className="roboto text-white  hover:text-indigo-200">
                                 <a href="javascript:void(0)">Tv Show</a>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="roboto text-white hover:text-indigo-200">
                                 <a href="javascript:void(0)">Movies</a>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="roboto text-white hover:text-indigo-200">
                                 <a href="javascript:void(0)">Animations</a>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">  <input type="text" /> Recherche </a>
+                            <li className="roboto text-white hover:text-indigo-200">
+                                <a href="javascript:void(0)">  <input className="bg-slate-400 focus:bg-slate-50 focus-outline-none focus:border-slate-600" type="text"/> Recherche </a>
                             </li>
                             
                         </ul>
@@ -80,14 +81,12 @@ const NavbarHome = () => {
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">
                     <a
                         href="javascript:void(0)"
-                        className="inline-block w-full px-4 py-2 text-center text-white bg-blue-600 rounded-full shadow hover:bg-blue-500"
-                    >
+                        className="inline-block w-full px-4 py-2 text-center text-white bg-blue-600 rounded-full shadow hover:bg-blue-500">
                         User
                     </a>
                     <a
                         href="javascript:void(0)"
-                        className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-red-600 rounded-md shadow hover:bg-red-500"
-                    >
+                        className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-red-600 rounded-md shadow hover:bg-red-500">
                         Log out 
                     </a>
                 </div>
