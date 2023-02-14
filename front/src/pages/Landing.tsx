@@ -1,4 +1,6 @@
 import NFBG from '../assets/pictures/NFBG.jpg';
+import NavbarHome from '../composants/navbar/NavbarHome';
+import NavbarSignUp from '../composants/navbar/NavbarSingUp';
 import LoginUser from '../composants/LoginForm/Loginuser';
 import Emailuser from '../composants/RegisterForm/Emailuser';
 
@@ -6,10 +8,13 @@ const Landing = () => {
 
 
     return (
-
-        <div className="LandingPage overflow-hidden">
+        
+          
         
 
+        <div className="LandingPage overflow-hidden">
+        <NavbarSignUp />
+       
         {/* on top  */}
 
 

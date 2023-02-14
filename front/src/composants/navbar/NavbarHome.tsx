@@ -1,4 +1,6 @@
+
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const NavbarHome = () => {
     const [navbar, setNavbar] = useState(false);
@@ -9,9 +11,10 @@ const NavbarHome = () => {
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="javascript:void(0)">
-                            <h2 className="varela text-2xl font-bold text-white">FilmFriendzy</h2>
-                        </a>
+       <Link to="/">
+                            <h2 className="varela text-2xl font-bold text-white hover:text-red-400">FilmFriendzy</h2>
+                        </Link>
+
                         <div className="md:hidden">
                             <button
                                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -96,12 +99,12 @@ const NavbarHome = () => {
                     >
                         User
                     </a>
-                    <a
-                        href="javascript:void(0)"
+                    < Link
+                        to="/"
                         className="px-4 py-2 text-white bg-red-600 rounded-md shadow hover:bg-red-500"
                     >
                         Log out
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>
