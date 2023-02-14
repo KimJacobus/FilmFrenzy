@@ -9,7 +9,7 @@ const Home = () => {
 
         <div className="absolute h-screen w-screen bg-zinc-800">
 
-        <div className="home">
+        <div className="Home">
             
            {/* <div>
             <h4>All movie for little price per month* . <br /> When you want and everywhere. 

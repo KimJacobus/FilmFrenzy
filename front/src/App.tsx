@@ -1,28 +1,56 @@
-import NavbarSignUp from './composants/navbar/navbar-singup';
-import NavbarSignIn from './composants/navbar/navbar-singin';
+import NavbarSignUp from './composants/navbar/NavbarSingUp';
+import NavbarSignIn from './composants/navbar/NavbarSingIn';
 
 import Names from "./composants/RegisterForm/Names"
 import Emailuser from "./composants/RegisterForm/Emailuser"
 import Password from "./composants/RegisterForm/Password"
-import navbarHome from "./composants/navbar/navbarHome"
+import Home from "./pages/Home";
+import LoginUser from './composants/LoginForm/Loginuser';
+import navbarHome from "./composants/navbar/NavbarHome"
 
 
-import NavbarHome from './composants/navbar/navbarHome';
+import NavbarHome from './composants/navbar/NavbarHome';
 import Landing from "./pages/Landing"
 
 function App() {
   return (
 
 
-
     <div className="App">
+     
+     <div className="Navbar">
+     
+     <NavbarSignUp/>
+      <NavbarSignIn/>
+       <NavbarHome />
+
+      </div>
+
+      <div className="content"> 
+       
+        <Home />
+
+      <h1 className="text-3xl font-bold underline">
+            <p className='text-white'> Hello world!</p> 
+       </h1>
+    </div>
+    
+      <Names />
+      <Emailuser />
+      <Password />
+      <LoginUser />
       
-<NavbarHome />
 
+    <div className="contentTWo">
+      
+    </div>
+        </div> 
+        
 
-<Landing />
+       
+        
 
-        </div>
+        
   ) 
 }
 export default App
