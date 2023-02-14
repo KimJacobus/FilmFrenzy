@@ -12,40 +12,28 @@ import navbarHome from "./composants/navbar/NavbarHome"
 import NavbarHome from './composants/navbar/NavbarHome';
 import Landing from "./pages/Landing"
 
+
+
 function App() {
   return (
 
 
 <div className="App">
 
-<body className="bg-slate-grey">
-     
-     <NavbarSignUp/>
-      <NavbarSignIn/>
-       <NavbarHome />
+    <NavbarHome />
+
 
 
       <div className="content"> 
        
-        <Home />
-
-      <h1 className="text-3xl font-bold underline">
-            <p className='text-white'> Hello world!</p> 
-       </h1>
-    </div>
-    
-      <Names />
-      <Emailuser />
-      <Password />
-      <LoginUser />
+        <Landing />
 
       
 
-    <div className="contentTWo">
-      
-    </div>
-        
-</body>
+
+
+
+      </div>
 
       </div>
         
