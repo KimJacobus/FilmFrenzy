@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 const NavbarSignIn = () => {
     const [navbar, setNavbar] = useState(false);
 
@@ -9,9 +9,9 @@ const NavbarSignIn = () => {
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="javascript:void(0)">
-                            <h2 className="text-2xl font-bold text-white">FrenzyMovies</h2>
-                        </a>
+                        <Link to="/">
+                            <h2 className="text-2xl font-bold text-white">FilmFriendzy</h2>
+                        </Link>
                         <div className="md:hidden">
                             <button
                                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -58,12 +58,12 @@ const NavbarSignIn = () => {
                     >
                      
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-                    <a
-                        href="javascript:void(0)"
+                    <Link
+                        to="/LoginForm"
                         className="inline-block w-full px-4 py-2 text-center text-white bg-red-600 rounded-md shadow hover:bg-red-500"
                     >
                         Sign in
-                    </a>
+                    </Link>
                     <a
                         href="javascript:void(0)"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-400"
@@ -74,12 +74,12 @@ const NavbarSignIn = () => {
                     </div>
                 </div>
                 <div className="hidden space-x-2 md:inline-block">
-                    <a
-                        href="javascript:void(0)"
+                    <Link
+                        to="/LoginForm"
                         className="px-4 py-2 text-white bg-red-600 rounded-md shadow hover:bg-red-500"
                     >
                         Sign in
-                    </a>
+                    </Link>
                     <a
                         href="javascript:void(0)"
                         className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-400"

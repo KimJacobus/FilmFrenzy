@@ -1,3 +1,5 @@
+import NavbarSignIn from "../navbar/NavbarSingIn";
+
 const LoginUser = () => {
 
 
@@ -10,6 +12,8 @@ const LoginUser = () => {
 
 
     return ( 
+      <div className="absolute h-screen w-screen bg-zinc-800">
+        <NavbarSignIn/>
         <div className="loginuser relative">
 
 <div className="flex w-screen h-auto justify-center">
@@ -66,6 +70,7 @@ const LoginUser = () => {
 </div>
 </div>
 
+</div>
 </div>
 
      );

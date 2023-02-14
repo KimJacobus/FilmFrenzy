@@ -1,3 +1,5 @@
+import NavbarSignUp from "../navbar/NavbarSingUp";
+
 const Password = () => {
 
 
@@ -10,13 +12,15 @@ const Password = () => {
     }
 
     return (  
+      <div className="absolute h-screen w-screen bg-zinc-800">
+        <NavbarSignUp/>
       
 <div className="nameform relative">
 
 <div className="flex w-screen h-auto justify-center">
 <div className="p-6 mx-1 rounded shadow-lg bg-slate-900 mt-1">
 <div className="flex text-red-500 pb-6 text-xl justify-center"><h1 className="border-2 border-red-600 p-2 rounded-full">Enregister</h1></div>
-  
+<div className="text-white">Step 3</div>
   <form onSubmit={handleNext}>
     <div className="grid grid-cols-2 gap-4">
       <div className="form-group mb-6">
@@ -68,6 +72,7 @@ const Password = () => {
 </div>
 </div>
 
+</div>
 </div>
 
 
