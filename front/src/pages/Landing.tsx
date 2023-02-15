@@ -31,7 +31,7 @@ const Landing = () => {
 
             <h1 className='text-1xl text-white text-center'>already have an account ?</h1>
 
-                <LoginUser />
+                <Emailuser />
                 </div>
 
 
