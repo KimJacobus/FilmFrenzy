@@ -1,3 +1,6 @@
+
+import { Link } from "react-router-dom";
+
 const Emailuser = () => {
 
 
@@ -15,7 +18,7 @@ const Emailuser = () => {
 
 <div className="flex w-screen h-auto justify-center">
 <div className="p-6 mx-1 rounded shadow-lg bg-slate-900 mt-1">
-<div className="flex text-red-500 pb-6 text-xl justify-center"><h1 className="border-2 border-red-600 p-2 rounded-full">Enregister</h1></div>
+<div className="flex text-red-500 pb-6 text-xl justify-center"><h1 className="border-2 border-red-600 p-2 rounded-full">Register</h1></div>
   
 <div className="text-white">Step 1</div>
   <form onSubmit={handleNext}>
@@ -49,20 +52,22 @@ const Emailuser = () => {
 
       <div className="form-group col-start-2 justify-self-end">
 
-      <button type="submit" className="
-      px-6
-      py-2.5
-      bg-zinc-800
-      text-white
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      shadow-md
-      hover:bg-slate-400 hover:shadow-lg
-      focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
-      active:bg-slate-900 active:shadow-lg"
-      >next</button>
+      <Link to="/RegisterForm2">                             
+          <button type="submit" className="
+          px-6
+          py-2.5
+          bg-red-800
+          text-white
+          font-medium
+          text-xs
+          leading-tight
+          uppercase
+          shadow-md
+          hover:bg-slate-400 hover:shadow-lg
+          focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
+          active:bg-slate-900 active:shadow-lg"
+          >Next Step</button>
+      </Link>
     </div>
    </div>
   </form>
