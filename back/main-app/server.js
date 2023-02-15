@@ -16,13 +16,13 @@ function initial() {
     name: "user",
   });
 
-  Role.create({
-    id: 2,
-    name: "moderator",
-  });
+  // Role.create({
+  //   id: 2,
+  //   name: "moderator",
+  // });
 
   Role.create({
-    id: 3,
+    id: 2,
     name: "admin",
   });
 }
@@ -40,7 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cookieSession({
-    name: "bezkoder-session",
+    name: "filmFriendzy-session",
     secret: "COOKIE_SECRET", // should use as secret environment variable
     httpOnly: true,
   })
