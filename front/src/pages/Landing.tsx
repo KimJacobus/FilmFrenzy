@@ -3,6 +3,7 @@ import NavbarHome from '../composants/navbar/NavbarHome';
 import NavbarSignUp from '../composants/navbar/NavbarSingUp';
 import LoginUser from '../composants/LoginForm/Loginuser';
 import Emailuser from '../composants/RegisterForm/Emailuser';
+import Footer from '../composants/footer/footer';
 
 const Landing = () => {
 
@@ -55,7 +56,7 @@ const Landing = () => {
 
 
 
-
+            <Footer />
 
         </div>
 
