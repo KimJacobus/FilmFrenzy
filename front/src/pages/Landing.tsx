@@ -25,7 +25,7 @@ const Landing = () => {
             
             <div id="FFTitle" className='absolute z-10'>
                 <h1 className='righteous text-3xl lg:text-8xl text-white mt-10 text-center'>Welcome to <br></br>Film Friendzy!</h1>
-                <p className='roboto text-2xl lg:text-5xl text-white mt-4 text-center'>Movie nights with friends from anywhere!</p>
+                <p className='jose text-2xl lg:text-5xl text-white mt-4 text-center'>Movie nights with friends from anywhere!</p>
 
         <div className="mt-10 opacity-90">
 
