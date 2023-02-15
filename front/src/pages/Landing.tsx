@@ -47,7 +47,7 @@ const Landing = () => {
         {/* change h to auto when page is filled with form etc */}
         <div className='bg-gradient-to-b from-indigo-500 ...'>
             <img className='w-screen h-auto opacity-40' src={NFBG}/>
-        <div className='w-auto h-[30rem] bg-slate-900'>
+        <div className='w-auto h-[39rem] bg-slate-900'>
                 </div>
                 </div>
             </div>
