@@ -7,6 +7,18 @@
 
 
 @font-face {
+  font-family: 'righteous';
+  src: url('./assets/fonts/righteous.ttf') format('truetype');
+}
+
+.righteous {
+font-family: 'righteous';
+}
+
+
+
+
+@font-face {
   font-family: 'jose';
   src: url('./assets/fonts/jose.ttf') format('truetype');
 }
@@ -14,7 +26,6 @@
 .jose {
 font-family: 'jose';
 }
-
 
 @font-face {
   font-family: 'roboto';
