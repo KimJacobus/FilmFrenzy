@@ -1,5 +1,6 @@
 import NavbarHome from "../composants/navbar/NavbarHome";
 import Carousel from "../composants/Carousel/Carousel";
+import Demo from "../composants/Carousel/demo";
 
 const Home = () => {
     return (
@@ -11,15 +12,16 @@ const Home = () => {
             <NavbarHome/>
             </div>
 
-        <div className="Home">
+        <div className="content">
 
-            <Carousel />
+            <Demo />
+            <Demo />
+            <Demo />
+
+            {/* <Carousel /> */}
 
         </div>
 
-        <div className="Background">
-
-        </div>
         </div>
 
 
