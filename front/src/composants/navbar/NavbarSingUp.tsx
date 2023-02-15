@@ -5,7 +5,10 @@ const NavbarSignUp = () => {
     const [navbar, setNavbar] = useState(false);
 
     return (
-        <nav className="w-full bg-gradient-to-r from-zinc-600 to-slate-900 shadow">
+
+
+
+        <nav className="w-full bg-gradient-to-r from-zinc-600 to-slate-900 shadow ">
        
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
@@ -68,7 +71,6 @@ const NavbarSignUp = () => {
                     </Link>
                     <a
                     
-                    // DELETE hrefs ? 
 
                         href="javascript:void(0)"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-400"

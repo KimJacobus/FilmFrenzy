@@ -13,11 +13,11 @@ const Landing = () => {
         
 
         <div className="LandingPage overflow-hidden">
-        <NavbarSignUp />
        
         {/* on top  */}
 
 
+        <NavbarSignUp />
 
         <div className="grid-col">
 
@@ -32,7 +32,7 @@ const Landing = () => {
 
 
 
-                <p className='jose text-sm lg:text-2xl text-white mb-1 text-center'>Sign up now and get a friend to join for free!</p>
+                <p className='jose text-sm lg:text-2xl text-white mb-1 text-center'>Sign up now and get a friend to join for free !</p>
 
 
 
@@ -50,8 +50,8 @@ const Landing = () => {
 
         {/* change h to auto when page is filled with form etc */}
         <div className='bg-gradient-to-b from-indigo-500 ...'>
-            <img className='w-screen h-auto opacity-40' src={NFBG}/>
-        <div className='w-auto h-[39rem] bg-slate-900'>
+            <img className='w-screen lg:h-auto h-80 opacity-40 overflow-hidden' src={NFBG}/>
+        <div className='w-auto h-[39rem] lg:h-auto bg-slate-900'>
                 </div>
                 </div>
             </div>
