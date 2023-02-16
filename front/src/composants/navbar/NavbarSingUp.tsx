@@ -5,13 +5,17 @@ const NavbarSignUp = () => {
     const [navbar, setNavbar] = useState(false);
 
     return (
-        <nav className="w-full bg-gradient-to-r from-zinc-600 to-slate-900 shadow">
+
+
+
+        <nav className="w-full bg-gradient-to-r from-zinc-600 to-slate-900 shadow ">
        
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <Link to="/">
-                            <h2 className="text-2xl font-bold text-white">FilmFriendzy</h2>
+
+                            <h2 className="righteous text-2xl font-bold text-white">FilmFriendzy</h2>
                         </Link>
                         <div className="md:hidden">
                             <button
@@ -58,7 +62,7 @@ const NavbarSignUp = () => {
                         }`}
                     >
                        
-                        <div className="mt-3 space-y-2 lg:hidden md:inline-block">
+                        <div className="mt-3 space-y-2 md:hidden">
                     <Link
                         to="/LoginForm"
                         className="inline-block w-full px-4 py-2 text-center text-white bg-red-600 rounded-md shadow hover:bg-red-500"
@@ -66,6 +70,8 @@ const NavbarSignUp = () => {
                         Sign in
                     </Link>
                     <a
+                    
+
                         href="javascript:void(0)"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-400"
                     >
