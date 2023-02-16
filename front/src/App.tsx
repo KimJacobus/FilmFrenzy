@@ -1,56 +1,108 @@
-import NavbarSignUp from './composants/navbar/NavbarSingUp';
-import NavbarSignIn from './composants/navbar/NavbarSingIn';
-
 import Names from "./composants/RegisterForm/Names"
-import Emailuser from "./composants/RegisterForm/Emailuser"
 import Password from "./composants/RegisterForm/Password"
 import Home from "./pages/Home";
 import LoginUser from './composants/LoginForm/Loginuser';
-import navbarHome from "./composants/navbar/NavbarHome"
+import Landing from "./pages/Landing";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
-import NavbarHome from './composants/navbar/NavbarHome';
-import Landing from "./pages/Landing"
 
 function App() {
   return (
 
+    <Router> 
+      <div className="App">
+        
+        <div className="content"> 
+        {/** route for the register and the first page for website*/}
+         
+          <Routes>
+            <Route path='/' element={<Landing/>}>
+            </Route> 
+          </Routes>
 
-    <div className="App">
-     
-     <div className="Navbar">
-     
-     <NavbarSignUp/>
-      <NavbarSignIn/>
-       <NavbarHome />
 
+        {/** route for the register  step 2 to step 3*/}
+           
+          <Routes>
+            <Route path='/RegisterForm2' element={<Names/>}>
+            </Route> 
+          </Routes>
+
+        {/** route for the register  step 3 to step 3*/}
+            
+          <Routes>
+            <Route path='/RegisterForm3' element={<Password/>}>
+            </Route> 
+          </Routes>
+
+        {/** route for page log-In */}
+              
+          <Routes>
+            <Route path='/LoginForm' element={<LoginUser/>}>
+            </Route> 
+          </Routes>
+
+
+
+        {/** route for the page*/}
+          <Routes>
+            <Route path='/home' element={<Home/>}>
+            </Route> 
+          </Routes>
+
+         
+        </div>
       </div>
-
-      <div className="content"> 
-       
-        <Home />
-
-      <h1 className="text-3xl font-bold underline">
-            <p className='text-white'> Hello world!</p> 
-       </h1>
-    </div>
-    
-      <Names />
-      <Emailuser />
-      <Password />
-      <LoginUser />
-      
-
-    <div className="contentTWo">
-      
-    </div>
-        </div> 
-        
-
-       
-        
-
-        
-  ) 
+    </Router>      
+  ) ;
 }
 export default App
+
+
+
+{/*
+listes component :
+{
+ <---------- Landing --------------> 
+#register : 
+-<NavbarSignUp/>
+
+- <Landing/>
+
+-     <Emailuser />
+      -<Names />
+      -<Password />
+
+-info site ???? 
+-devise accepted
+-footer
+
+
+#login :
+
+- <NavbarSignIn/>
+
+-  <LoginUser /> (with background ????)
+
+-footer
+
+
+
+<-------------home ------------->
+#homepage :
+-<NavbarHome />
+
+- <Home />
+
+<-------- bg color ---------> 
+<body className="bg-slate-grey">
+}*/
+}
+
+
+
+
+  
+  
