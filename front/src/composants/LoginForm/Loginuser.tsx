@@ -65,7 +65,7 @@ const LoginUser = () => {
       <button type="submit" className="
       px-6
       py-2.5
-      bg-zinc-800
+      bg-red-800
       text-white
       font-medium
       text-xs
@@ -75,7 +75,7 @@ const LoginUser = () => {
       hover:bg-slate-400 hover:shadow-lg
       focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
       active:bg-slate-900 active:shadow-lg"
-      >next</button>
+      >Next</button>
       </Link>
     </div>
    </div>
