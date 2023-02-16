@@ -14,7 +14,6 @@ const Landing = () => {
         
 
         <div className="LandingPage overflow-hidden">
-       
         {/* on top  */}
 
 
@@ -28,9 +27,6 @@ const Landing = () => {
                 <h1 className='righteous text-3xl lg:text-8xl text-white mt-10 mb-10 text-center'>Welcome to <br></br>Film Friendzy!</h1>
 
                 <p className='jose text-2xl lg:text-3xl text-white text-center mb-28'>Movie nights with friends from anywhere!</p>
-
-
-
 
 
                 <p className='jose text-sm lg:text-2xl text-white mb-1 text-center'>Sign up now and get a friend to join for free !</p>
