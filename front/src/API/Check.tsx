@@ -5,9 +5,6 @@ import { useEffect } from "react";
 const Check = () => {
 
 
-    return (  
-        <>{
-
             useEffect(() => {
                 fetch('http://localhost:6868/api/auth/signup')
                 .then(res => {
@@ -17,20 +14,13 @@ const Check = () => {
 
                     console.log(data);
 
-
                 })
-
-
-
-
-            }, [])
+            }, []);
             
+    return null;            
             
-            
-            };</>
 
 
-    );
 }
  
 export default Check;

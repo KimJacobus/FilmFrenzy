@@ -9,11 +9,11 @@ const BigCarousel = () => {
           <div className="control relative">
 
 
-    <div className="arrows flex absolute w-screen h-96 items-end justify-between">
+    <div className="arrows flex absolute w-screen h-[42rem] items-end justify-between">
 
-    <button className="text-9xl bg-gray-500" onClick={() => prev()}>{'<'}</button>
+    <button className="text-9xl bg-gray-500 py-[16.2rem] opacity-0 hover:opacity-20" onClick={() => prev()}>{'<'}</button>
 
-    <button className="text-9xl bg-gray-500"onClick={() => next()}>{'>'}</button>
+    <button className="text-9xl bg-gray-500 py-[16.2rem] opacity-0 hover:opacity-20"onClick={() => next()}>{'>'}</button>
 
 
       
