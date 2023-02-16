@@ -72,7 +72,7 @@ const NavbarSignUp = () => {
                     <a
                     
 
-                        href="javascript:void(0)"
+                        href="#"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-400"
                     >
                         Sign up

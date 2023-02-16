@@ -19,7 +19,7 @@ const Create = () => {
 
 
             
-            fetch(' ', {
+            fetch('http://localhost:6868/api/auth/signup', {
                 method: 'POST', 
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(user)
