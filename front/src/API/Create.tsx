@@ -5,6 +5,7 @@ import { useState } from 'react';
 const Create = () => {
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     // const [isPending, setIsPending] = useState(false);
@@ -12,18 +13,23 @@ const Create = () => {
     
     const handleSubmit = (e:any) => {
             e.preventDefault();
-            const user = {firstname, lastname, email, password}
+            const user = {firstname, lastname, username, email, password}
             
             // setIsPending(true);
 
 
-
-            fetch('http://localhost:8000/blogs', {
+            
+            fetch(' ', {
                 method: 'POST', 
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(user)
+
+
+
             }).then(() => {
-                console.log({firstname})
+
+
+                console.log({firstname}, 'no errors')
                 // setIsPending(false);
                 // history.push('/');
             })
@@ -43,6 +49,10 @@ const Create = () => {
 
             
             <input type="text" required value = {firstname} onChange={(e) => setFirstname(e.target.value)}/>
+            <input type="text" required value = {lastname} onChange={(e) => setLastname(e.target.value)}/>
+            <input type="text" required value = {username} onChange={(e) => setUsername(e.target.value)}/>
+            <input type="text" required value = {email} onChange={(e) => setEmail(e.target.value)}/>
+            <input type="text" required value = {password} onChange={(e) => setPassword(e.target.value)}/>
 {/* 
             <label>Blog title: </label>
             <textarea required
