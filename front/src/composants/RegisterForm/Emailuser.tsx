@@ -20,10 +20,15 @@ const Emailuser = () => {
 <div className="nameform relative">
 
 <div className="flex w-screen h-auto justify-center">
-<div className="p-6 mx-1 rounded shadow-lg bg-slate-900 mt-1">
-<div className="flex text-red-500 pb-6 text-xl justify-center"><h1 className="border-2 border-red-600 p-2 rounded-full">Register</h1></div>
-  
-<div className="text-white">Step 1</div>
+
+
+<div className="p-6 mx-1 rounded shadow-lg bg-slate-900  opacity-90 mt-1">
+<div className="flex text-red-500 pb-6 text-md justify-between">
+
+  <h1 className="border-2 border-red-600 p-2 rounded">Enregistrer</h1>
+<div className="text-white mb-3">1/4</div>
+</div>
+
   <form onSubmit={handleNext}>
     <div className="grid grid-cols-2 gap-4">
       <div className="form-group mb-6">
@@ -53,7 +58,11 @@ const Emailuser = () => {
           placeholder="Username"></input>
       </div>
 
-      <div className="form-group col-start-2 justify-self-end">
+      </div>
+      <div className="flex form-group justify-between">
+
+      <a href="#"><h1 className='text-sm text-white ml-1'>already have an account ?</h1></a>
+
 
       <Link to="/RegisterForm2">                             
           <button type="submit" className="
@@ -71,8 +80,8 @@ const Emailuser = () => {
           active:bg-slate-900 active:shadow-lg"
           >Next Step</button>
       </Link>
+
     </div>
-   </div>
   </form>
 </div>
 </div>

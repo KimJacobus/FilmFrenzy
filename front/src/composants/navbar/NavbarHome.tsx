@@ -12,7 +12,7 @@ const NavbarHome = () => {
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
        <Link to="/">
-                            <h2 className="varela text-2xl font-bold text-white hover:text-red-400">FilmFriendzy</h2>
+                            <h2 className="righteous text-2xl font-bold text-white hover:text-red-400">FilmFriendzy</h2>
                         </Link>
 
                         <div className="md:hidden">
@@ -72,19 +72,24 @@ const NavbarHome = () => {
                             <li className="roboto text-white hover:text-indigo-200">
                                 <a href="javascript:void(0)">Animations</a>
                             </li>
-                            <li className="roboto text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">  <input className="bg-slate-400 focus:bg-slate-50 focus-outline-none focus:border-slate-600" type="text"/> Recherche </a>
+                            <li id="inputRecherche">
+                                 <input className="roboto placeholder:text-slate-200 focus:placeholder-slate-600 placeholder:text-center placeholder:focus bg-slate-600 focus:bg-sky-200  focus:outline-none  focus:border-slate-600 rounded text-slate-700"  placeholder="Recherche" type="text" name="Recherche"/>
                             </li>
                             
                         </ul>
 
+
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block ">
+
                     <a
                         href="javascript:void(0)"
                         className="inline-block w-full px-4 py-2 text-center text-white bg-blue-600 rounded-full shadow hover:bg-blue-500">
                         User
                     </a>
                     <a
+
+                    //DELETE hrefs ? 
+
                         href="javascript:void(0)"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-red-600 rounded-md shadow hover:bg-red-500">
                         Log out 
@@ -92,16 +97,19 @@ const NavbarHome = () => {
                 </div>
                     </div>
                 </div>
-                <div className="hidden space-x-2 md:inline-block">
+
+                        {/* j'ai ajouté flex ici ?  */}
+
+                <div className="hidden space-x-2 md:flex md:mx-2">
                     <a
                         href="javascript:void(0)"
-                        className="px-4 py-2 text-white rounded-full bg-blue-600 rounded-md-full shadow hover:bg-blue-500 "
+                        className="px-2 py-2 text-white rounded-full bg-blue-600 rounded-md-full shadow hover:bg-blue-500 "
                     >
                         User
                     </a>
                     < Link
                         to="/"
-                        className="px-4 py-2 text-white bg-red-600 rounded-md shadow hover:bg-red-500"
+                        className="px-2 py-2  text-white bg-red-600 rounded-md shadow hover:bg-red-500"
                     >
                         Log out
                     </Link>
