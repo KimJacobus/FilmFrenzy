@@ -2,34 +2,22 @@ import { useSnapCarousel } from "react-snap-carousel";
 
 
 const BigCarousel = () => {
-        const { scrollRef, pages, activePageIndex, next, prev, goTo } = useSnapCarousel();
+        const { scrollRef,  next, prev, } = useSnapCarousel();
         
         return (
 
-          <div className="control">
+          <div className="control relative">
 
-          <div className="arrows">
 
-      <div>
-      {activePageIndex + 1} / {pages.length}
+    <div className="arrows flex absolute w-screen h-96 items-end justify-between">
+
+    <button className="text-9xl bg-gray-500" onClick={() => prev()}>{'<'}</button>
+
+    <button className="text-9xl bg-gray-500"onClick={() => next()}>{'>'}</button>
+
+
+      
     </div>
-    <button onClick={() => prev()}>Prev</button>
-    <button onClick={() => next()}>Next</button>
-    <ol style={{ display: 'flex', color:'white' }}>
-      {pages.map((_, i) => (
-        <li key={i}>
-          <button
-            style={i === activePageIndex ? { opacity: 0.5 } : {}}
-            onClick={() => goTo(i)}
-          >
-            {i + 1}
-          </button>
-        </li>
-      ))}
-    </ol>
-    </div>
-
-
 
 
 
@@ -38,7 +26,7 @@ const BigCarousel = () => {
             style={{
               display: 'flex',
               overflow: 'auto',
-              // scrollSnapType: 'x mandatory',
+              scrollSnapType: 'x mandatory',
               scrollbarWidth: 'none',
               cursor: 'grab',
               userSelect: 'none'
@@ -46,6 +34,8 @@ const BigCarousel = () => {
           >
             {Array.from({ length: 100 }).map((_, i) => (
                 <li
+              key={i}
+
                 style={{
                   backgroundColor: 'aqua',
                   fontSize: '50px',

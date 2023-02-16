@@ -29,11 +29,11 @@ const Home = () => {
 
 
         <div className="lg:inline hidden">
-{/* 
-            <AdvancedCarousel /> */}
 
 
+                <CatBar/>
             <BigCarousel />
+                <CatBar/>
             <BigCarousel />
 
 

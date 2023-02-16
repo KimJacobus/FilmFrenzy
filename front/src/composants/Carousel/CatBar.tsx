@@ -24,9 +24,14 @@ const cat = [
 
 
         <div>
-            {cat.filter(cat => cat.id == 1).map(filtCat => (
-                <li>
+            
+            {cat.filter(cat => cat.id == 1 ).map(filtCat => (
+
+                <li key={filtCat.id}>
+
+
                     {filtCat.genre}
+
                 </li>
             ))}
 

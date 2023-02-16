@@ -18,6 +18,8 @@ const SmallCarousel = () => {
     >
       {Array.from({ length: 100 }).map((_, i) => (
           <li
+          key={i}
+
           style={{
             backgroundColor: 'aqua',
             fontSize: '50px',
