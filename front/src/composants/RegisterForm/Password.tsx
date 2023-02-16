@@ -1,5 +1,7 @@
 import NavbarSignUp from "../navbar/NavbarSingUp";
 
+import { Link } from "react-router-dom";
+
 const Password = () => {
 
 
@@ -19,8 +21,12 @@ const Password = () => {
 
 <div className="flex w-screen h-auto justify-center">
 <div className="p-6 mx-1 rounded shadow-lg bg-slate-900 mt-1">
-<div className="flex text-red-500 pb-6 text-xl justify-center"><h1 className="border-2 border-red-600 p-2 rounded-full">Enregister</h1></div>
-<div className="text-white">Step 3</div>
+<div className="flex text-red-500 pb-6 text-md justify-between">
+
+<h1 className="border-2 border-red-600 p-2 rounded">Register</h1>
+<div className="text-white">3/4</div>
+</div>
+
   <form onSubmit={handleNext}>
     <div className="grid grid-cols-2 gap-4">
       <div className="form-group mb-6">
@@ -51,8 +57,8 @@ const Password = () => {
       </div>
 
       <div className="form-group col-start-2 justify-self-end">
-
-      <button type="submit" className="
+      <Link to="/LoginForm">
+     <button type="submit" className="
       px-6
       py-2.5
       bg-zinc-800
@@ -66,6 +72,7 @@ const Password = () => {
       focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
       active:bg-slate-900 active:shadow-lg"
       >next</button>
+      </Link>
     </div>
    </div>
   </form>

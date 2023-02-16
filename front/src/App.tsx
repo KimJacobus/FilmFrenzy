@@ -7,6 +7,8 @@ import Landing from "./pages/Landing";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Switch } from "@mui/material";
 import NavbarHome from "./composants/navbar/NavbarHome";
+import NewEmail from "./composants/forgotpassword/sendMail";
+import NewPassword from "./composants/forgotpassword/NewPassword";
 
 
 
@@ -52,6 +54,16 @@ function App() {
         {/** route for the page*/}
           <Routes>
             <Route path='/home' element={<Home/>}>
+            </Route> 
+          </Routes>
+
+          <Routes>
+            <Route path='/NewEmail' element={<NewEmail/>}>
+            </Route> 
+          </Routes>
+
+          <Routes>
+            <Route path='/NewPassword' element={<NewPassword/>}>
             </Route> 
           </Routes>
 

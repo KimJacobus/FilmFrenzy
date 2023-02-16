@@ -79,7 +79,7 @@ const NavbarHome = () => {
                         </ul>
 
 
-                        <div className="mt-3 space-y-2 lg:hidden md:inline-block ">
+                        <div className="mt-3 space-y-2 md:hidden inline-block ">
 
                     <a
                         href="javascript:void(0)"
