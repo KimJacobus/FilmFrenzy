@@ -5,6 +5,8 @@ import LoginUser from './composants/LoginForm/Loginuser';
 import Landing from "./pages/Landing";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Switch } from "@mui/material";
+import NavbarHome from "./composants/navbar/NavbarHome";
 
 
 
@@ -21,6 +23,7 @@ function App() {
             <Route path='/' element={<Landing/>}>
             </Route> 
           </Routes>
+       
 
 
         {/** route for the register  step 2 to step 3*/}
