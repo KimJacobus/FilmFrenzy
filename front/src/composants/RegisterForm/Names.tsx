@@ -17,8 +17,7 @@ const Names = () => {
 
 
     return (  
-      <div className="absolute h-screen w-screen bg-zinc-800">
-        <NavbarSignUp/>
+      
       
 <div className="nameform relative">
 
@@ -85,7 +84,7 @@ const Names = () => {
 </div>
 
 </div>
-</div>
+
 
 );
 }
