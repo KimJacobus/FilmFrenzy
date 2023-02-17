@@ -24,7 +24,7 @@ const LoginUser = () => {
 <div className="flex justify-between text-red-500 pb-6 text-xl">
   
   <h1 className="border-2 border-red-600 p-2 rounded opacity-70 text-base cursor-default justify-self-start">Login</h1>
- <Link to="/NewEmail"> <h1 className="text-sm">forgot password?</h1> </Link> 
+ <Link to="/SendEmail"> <h1 className="text-sm">forgot password?</h1> </Link> 
   </div>
 
   

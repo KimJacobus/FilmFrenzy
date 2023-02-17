@@ -9,6 +9,7 @@ import { Switch } from "@mui/material";
 import NavbarHome from "./composants/navbar/NavbarHome";
 import NewEmail from "./composants/forgotpassword/sendMail";
 import NewPassword from "./composants/forgotpassword/NewPassword";
+import Log from "./pages/Log";
 
 
 
@@ -45,7 +46,7 @@ function App() {
         {/** route for page log-In */}
               
           <Routes>
-            <Route path='/LoginForm' element={<LoginUser/>}>
+            <Route path='/LoginForm' element={< Log/>}>
             </Route> 
           </Routes>
 
@@ -57,8 +58,10 @@ function App() {
             </Route> 
           </Routes>
 
+          {/**Route for forgot password */}
+
           <Routes>
-            <Route path='/NewEmail' element={<NewEmail/>}>
+            <Route path='/SendEmail' element={<NewEmail/>}>
             </Route> 
           </Routes>
 
