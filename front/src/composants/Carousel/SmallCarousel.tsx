@@ -1,7 +1,7 @@
-import React from 'react';
 import { useSnapCarousel } from 'react-snap-carousel';
 
-const Demo = () => {
+const SmallCarousel = () => {
+
   const { scrollRef } = useSnapCarousel();
   return (
     <ul
@@ -14,17 +14,12 @@ const Demo = () => {
         scrollbarWidth: 'none',
         cursor: 'grab',
         userSelect: 'none'
-
       }}
     >
       {Array.from({ length: 100 }).map((_, i) => (
           <li
-        //   key={i}
-        // draggable
+          key={i}
 
-        // onDragStart={event => {
-        //     event.dataTransfer.setData("text/plain", "This is a draggable item");
-        //   }}
           style={{
             backgroundColor: 'aqua',
             fontSize: '50px',
@@ -50,7 +45,7 @@ const Demo = () => {
   );
 };
 
-export default Demo;
+export default SmallCarousel;
 
 
 

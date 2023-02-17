@@ -14,7 +14,6 @@ const Landing = () => {
         
 
         <div className="LandingPage overflow-hidden">
-       
         {/* on top  */}
 
 
@@ -30,14 +29,12 @@ const Landing = () => {
                 <p className='jose text-2xl lg:text-3xl text-white text-center mb-28'>Movie nights with friends from anywhere!</p>
 
 
-
-
-
                 <p className='jose text-sm lg:text-2xl text-white mb-1 text-center'>Sign up now and get a friend to join for free !</p>
 
 
 
                 <Emailuser />
+                
 
 
 

@@ -1,4 +1,8 @@
 import NavbarSignUp from "../navbar/NavbarSingUp";
+import Create from "../../API/Create";
+import Check from "../../API/Check";
+
+import { Link } from "react-router-dom";
 
 const Names = () => {
 
@@ -9,6 +13,8 @@ const Names = () => {
     event.preventDefault();
     
         // transition to other form 
+
+
 
 }
 
@@ -21,9 +27,15 @@ const Names = () => {
 <div className="nameform relative">
 
 <div className="flex w-screen h-auto justify-center">
+
 <div className="p-6 mx-1 rounded shadow-lg bg-slate-900 mt-1">
-<div className="flex text-red-500 pb-6 text-xl justify-center"><h1 className="border-2 border-red-600 p-2 rounded-full">Enregister</h1></div>
-<div className="text-white">Step 2</div>
+<div className="flex text-red-500 pb-6 text-md justify-between">
+  
+  <h1 className="border-2 border-red-600 p-2 rounded">Register</h1>
+  <div className="text-white mb-3">2/4</div>
+  </div>
+  
+  
   <form onSubmit={handleNext}>
     <div className="grid grid-cols-2 gap-4">
       <div className="form-group mb-6">
@@ -54,11 +66,11 @@ const Names = () => {
       </div>
 
       <div className="form-group col-start-2 justify-self-end">
-
+      <Link to="/RegisterForm3">
       <button type="submit" className="
       px-6
       py-2.5
-      bg-zinc-800
+      bg-red-800
       text-white
       font-medium
       text-xs
@@ -68,7 +80,8 @@ const Names = () => {
       hover:bg-slate-400 hover:shadow-lg
       focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
       active:bg-slate-900 active:shadow-lg"
-      >next</button>
+      >Next Step</button>
+      </Link>
     </div>
    </div>
   </form>
@@ -76,10 +89,20 @@ const Names = () => {
 </div>
 
 </div>
+
+
+      <Create />
+      <Check /> 
+
+
+
+
 </div>
 
 );
-}
+
+    }
+
 
 
  
