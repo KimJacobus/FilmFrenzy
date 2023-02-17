@@ -1,4 +1,5 @@
 import NavbarSignIn from "../navbar/NavbarSingIn";
+import { Link } from "react-router-dom";
 
 const LoginUser = () => {
 
@@ -21,7 +22,7 @@ const LoginUser = () => {
 
 <div className="flex justify-between text-red-500 pb-6 text-xl">
   <h1 className="border-2 border-red-600 p-2 rounded opacity-70 text-base cursor-default justify-self-start">Login</h1>
-  <h1 className="text-sm">forgot password?</h1>
+ <Link to="/NewEmail"> <h1 className="text-sm">forgot password?</h1> </Link> 
   </div>
 
   
@@ -60,11 +61,11 @@ const LoginUser = () => {
       </div>
         <br />
       <div className="form-group justify-center">
-
+      <Link to="/home">
       <button type="submit" className="
       px-6
       py-2.5
-      bg-zinc-800
+      bg-red-800
       text-white
       font-medium
       text-xs
@@ -74,7 +75,8 @@ const LoginUser = () => {
       hover:bg-slate-400 hover:shadow-lg
       focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
       active:bg-slate-900 active:shadow-lg"
-      >next</button>
+      >Next</button>
+      </Link>
     </div>
    </div>
 
