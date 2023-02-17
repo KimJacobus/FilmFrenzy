@@ -56,6 +56,34 @@ Create streaming site inspired (Netflix, Hulu, Paramount+, Disney +, HBO max, Ap
     - [ ] Rating System on Movie show one  
 
 
+5. User Story: As an user I want to pay for my subscription
+    - [ ] Payment System ?? (Stripe, ou des autres)
+    - [ ] Product/Subscription has price
+
+6. User Story: As an User I want to be inform of the of site's data, privacy  and cookie policy
+    - [ ] Privacy Policy
+    - [ ] Cookie Policy
+    - [ ] Terms of Service
+
+
+7. User Story: As an admin I want to manage films,  ratings, commentaries via a backoffice panel
+    - [ ]  Backoffice system ??
+        - [ ] Commentaire
+        - [ ] Raitings
+            - [ ] Filtre par 
+    - [ ] Films
+        - [ ] all
+        - [ ] show one
+
+8. Other
+    - [ ] Comment System on Movie show one ?
+
+Technologies to use 
+    - Frontend: React, PHP, ...other
+    - Backend: NodeJs, PHP, Java, …etc
+    - PHP Laravel || Symphony
+
+
 
 
 ## sources : 

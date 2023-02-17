@@ -2,7 +2,6 @@ import NavbarHome from "../composants/navbar/NavbarHome";
 import SmallCarousel from "../composants/Carousel/SmallCarousel";
 import BigCarousel from "../composants/Carousel/BigCarousel";
 import CatBar from "../composants/Carousel/CatBar";
-import AdvancedCarousel from "../composants/Carousel/Controls";
 
 const Home = () => {
     return (
