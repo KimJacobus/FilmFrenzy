@@ -1,6 +1,10 @@
 import NavbarSignUp from "../navbar/NavbarSingUp";
 import Create from "../../API/Create";
 import Check from "../../API/Check";
+import Lazy from "../Carousel/LazyLoad";
+import NFBG from "../../assets/pictures/NFBG.jpg"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 import { Link } from "react-router-dom";
 
@@ -93,7 +97,8 @@ const Names = () => {
 
       <Create />
       <Check /> 
-
+    {/* <Lazy /> */}
+    {/* <LazyLoadImage className="absolute top-[80rem] h-96 w-96" src={NFBG}></LazyLoadImage> */}
 
 
 

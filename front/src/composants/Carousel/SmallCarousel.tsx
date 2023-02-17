@@ -1,6 +1,10 @@
 import { useSnapCarousel } from 'react-snap-carousel';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const SmallCarousel = () => {
+
+
+
 
   const { scrollRef } = useSnapCarousel();
   return (
