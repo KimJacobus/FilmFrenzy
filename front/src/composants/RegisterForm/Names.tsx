@@ -1,7 +1,7 @@
 import NavbarSignUp from "../navbar/NavbarSingUp";
 import Create from "../../API/Create";
 import Check from "../../API/Check";
-import Lazy from "../Carousel/LazyLoad";
+import Lazy from "../Carousel/LazyLoad/LazyLoad";
 import NFBG from "../../assets/pictures/NFBG.jpg"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 

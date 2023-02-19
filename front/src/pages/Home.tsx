@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div className="Home">
       
-            <div className="absolute h-screen w-screen bg-zinc-800"> 
+            <div className="absolute min-h-screen w-screen bg-zinc-800"> 
 
         <div className="Navbar mb-2">   
             <NavbarHome/>
@@ -24,6 +24,7 @@ const Home = () => {
             <SmallCarousel />
                 <CatBar/>
             <SmallCarousel />
+
         </div>
 
 
