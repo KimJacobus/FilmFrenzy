@@ -11,9 +11,9 @@ const BigCarousel = () => {
 
     <div className="arrows flex absolute w-screen h-[42rem] items-end justify-between">
 
-    <button className="text-9xl bg-gray-500 py-[16.2rem] opacity-0 hover:opacity-20" onClick={() => prev()}>{'<'}</button>
+    <button className="text-9xl bg-gray-500 py-[16.2rem] opacity-10 hover:opacity-20" onClick={() => prev()}>{'<'}</button>
 
-    <button className="text-9xl bg-gray-500 py-[16.2rem] opacity-0 hover:opacity-20"onClick={() => next()}>{'>'}</button>
+    <button className="text-9xl bg-gray-500 py-[16.2rem] opacity-10 hover:opacity-20"onClick={() => next()}>{'>'}</button>
 
 
       
@@ -23,6 +23,9 @@ const BigCarousel = () => {
 
           <ul
             ref={scrollRef}
+
+
+
             style={{
               display: 'flex',
               overflow: 'auto',
@@ -36,23 +39,10 @@ const BigCarousel = () => {
                 <li
               key={i}
 
-                style={{
-                  backgroundColor: 'aqua',
-                  fontSize: '50px',
 
-                  width: '450px',
-                  height: '650px',
+                className="righteous flex bg-cyan-400 text-3xl w-[450px] h-[650px] rounded-md m-5 
+                shrink-0 text-white justify-center items-center cursor-grab select-none"
 
-                  borderRadius: '10px',
-                  margin: '1.5rem',
-                  flexShrink: 0,
-                  color: '#fff',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  cursor: 'grab',
-                  userSelect: 'none'
-                }}
               >
                 Item {i}
               </li>
