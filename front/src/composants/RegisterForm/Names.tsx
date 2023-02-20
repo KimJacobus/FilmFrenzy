@@ -25,8 +25,7 @@ const Names = () => {
 
 
     return (  
-      <div className="absolute h-screen w-screen bg-zinc-800">
-        <NavbarSignUp/>
+      
       
 <div className="nameform relative">
 
@@ -94,15 +93,6 @@ const Names = () => {
 
 </div>
 
-
-      <Create />
-      <Check /> 
-    {/* <Lazy /> */}
-    {/* <LazyLoadImage className="absolute top-[80rem] h-96 w-96" src={NFBG}></LazyLoadImage> */}
-
-
-
-</div>
 
 );
 

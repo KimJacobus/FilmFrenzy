@@ -11,7 +11,7 @@ const NavbarHome = () => {
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-       <Link to="/">
+       <Link to="/home">
                             <h2 className="righteous text-2xl font-bold text-white hover:text-red-400">FilmFriendzy</h2>
                         </Link>
 
