@@ -1,6 +1,10 @@
 import NavbarSignUp from "../navbar/NavbarSingUp";
 import Create from "../../API/Create";
 import Check from "../../API/Check";
+import Lazy from "../Carousel/LazyLoad/LazyLoad";
+import NFBG from "../../assets/pictures/NFBG.jpg"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 import { Link } from "react-router-dom";
 
@@ -21,8 +25,7 @@ const Names = () => {
 
 
     return (  
-      <div className="absolute h-screen w-screen bg-zinc-800">
-        <NavbarSignUp/>
+      
       
 <div className="nameform relative">
 
@@ -90,14 +93,6 @@ const Names = () => {
 
 </div>
 
-
-      <Create />
-      <Check /> 
-
-
-
-
-</div>
 
 );
 

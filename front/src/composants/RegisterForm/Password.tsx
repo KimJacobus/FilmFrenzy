@@ -1,5 +1,3 @@
-import NavbarSignUp from "../navbar/NavbarSingUp";
-
 import { Link } from "react-router-dom";
 
 const Password = () => {
@@ -14,8 +12,7 @@ const Password = () => {
     }
 
     return (  
-      <div className="absolute h-screen w-screen bg-zinc-800">
-        <NavbarSignUp/>
+    
       
 <div className="nameform relative">
 
@@ -80,8 +77,6 @@ const Password = () => {
 </div>
 
 </div>
-</div>
-
 
 );
 }

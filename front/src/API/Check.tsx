@@ -1,50 +1,81 @@
-import { useEffect } from "react";
+import { useState } from 'react';
+// import { useHistory } from 'react-router-dom';
 
 
+const Create = () => {
 
-const Check = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    // const [isPending, setIsPending] = useState(false);
+    // const history = useHistory();
+    
+    const handleSubmit = (e:any) => {
+            e.preventDefault();
+            const user = {username, password}
+            
+            // setIsPending(true);
 
-
-            useEffect(() => {
-
+            
+            fetch('http://localhost:6868/api/auth/signin', {
+                method: 'POST', 
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(user)
                 
-                fetch('http://localhost:6868/api/auth/signup')
-                .then(res => {
-                    console.log(res);
-                    
+            }).then((err) => {
+                
+                console.log(user);
+                console.log(err);
+            })
 
-                    return res.json();
-                })
-                .then(data => {
 
-                    console.log(data);
-
-                })
-            }, []);
-            
-    return null;            
             
 
 
+        }
+
+    return (
+
+     <div className="create">
+        <h2>create account</h2>
+        <form onSubmit={handleSubmit}>
+            <label>create account: </label>
+
+            
+            <input type="text" required value = {username} onChange={(e) => setUsername(e.target.value)}/>
+            <input type="text" required value = {password} onChange={(e) => setPassword(e.target.value)}/>
+
+
+{/* 
+            "username": "Kikimmy",
+    "password": "kimj" */}
+
+
+
+{/* 
+            <label>Blog title: </label>
+            <textarea required
+                value = {body} 
+                onChange = {(e) => setBody(e.target.value)}>
+
+            </textarea> */}
+
+            {/* <label>Blog author:</label> */}
+
+            {/* <select */}
+                {/* value={ author } onChange={(e) => setAuthor(e.target.value)} */}
+            
+            {/* <option value="mario">mario</option> */}
+            {/* <option value="yoshi">yoshi</option> */}
+            {/* </select> */}
+
+            {<button>SIGN IN</button>}
+            {/* { isPending && <button disabled>Adding blog...</button>} */}
+
+        </form>
+
+     </div>
+     
+    );
 }
- 
-export default Check;
 
-
-// useEffect(() => {
-//     const fetchData = async () => {
-//         try {
-//             const response = await fetch('http://localhost:8080/api/v1/members');
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-//             const data = await response.json();
-//             console.log(data);
-//         } catch (error) {
-//             console.error(error);
-//         }
-//     };
-//     fetchData();
-// }, []);
-
-// return null;
+export default Create; 

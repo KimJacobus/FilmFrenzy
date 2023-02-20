@@ -5,10 +5,17 @@ import LoginUser from './composants/LoginForm/Loginuser';
 import Landing from "./pages/Landing";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Switch } from "@mui/material";
+// import { Switch } from "@mui/material";
 import NavbarHome from "./composants/navbar/NavbarHome";
 import NewEmail from "./composants/forgotpassword/sendMail";
 import NewPassword from "./composants/forgotpassword/NewPassword";
+
+import LazyPage from "./composants/Carousel/LazyLoad/LazyPage";
+
+import Log from "./pages/Log";
+import LandingNames from "./pages/LandingNames";
+import LandingPassword from "./pages/LandingPassword";
+
 
 
 
@@ -31,21 +38,27 @@ function App() {
         {/** route for the register  step 2 to step 3*/}
            
           <Routes>
-            <Route path='/RegisterForm2' element={<Names/>}>
+            <Route path='/RegisterForm2' element={<LandingNames/>}>
             </Route> 
           </Routes>
 
         {/** route for the register  step 3 to step 3*/}
             
           <Routes>
-            <Route path='/RegisterForm3' element={<Password/>}>
+            <Route path='/RegisterForm3' element={<LandingPassword/>}>
             </Route> 
           </Routes>
 
         {/** route for page log-In */}
               
           <Routes>
-            <Route path='/LoginForm' element={<LoginUser/>}>
+            <Route path='/LoginForm' element={< Log/>}>
+            </Route> 
+          </Routes>
+
+
+          <Routes>
+            <Route path='/LazyPage' element={<LazyPage/>}>
             </Route> 
           </Routes>
 
@@ -57,8 +70,10 @@ function App() {
             </Route> 
           </Routes>
 
+          {/**Route for forgot password */}
+
           <Routes>
-            <Route path='/NewEmail' element={<NewEmail/>}>
+            <Route path='/SendEmail' element={<NewEmail/>}>
             </Route> 
           </Routes>
 
