@@ -1,4 +1,6 @@
 import NavbarSignUp from "../navbar/NavbarSingUp";
+import Create from "../../API/Create";
+import Check from "../../API/Check";
 
 import { Link } from "react-router-dom";
 
@@ -11,6 +13,8 @@ const Names = () => {
     event.preventDefault();
     
         // transition to other form 
+
+
 
 }
 
@@ -86,8 +90,12 @@ const Names = () => {
 </div>
 
 
+
+
 );
-}
+
+    }
+
 
 
  
