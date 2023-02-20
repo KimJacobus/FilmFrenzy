@@ -5,7 +5,7 @@ import LoginUser from './composants/LoginForm/Loginuser';
 import Landing from "./pages/Landing";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { Switch } from "@mui/material";
+
 import NavbarHome from "./composants/navbar/NavbarHome";
 import NewEmail from "./composants/forgotpassword/sendMail";
 import NewPassword from "./composants/forgotpassword/NewPassword";
@@ -15,6 +15,7 @@ import LazyPage from "./composants/Carousel/LazyLoad/LazyPage";
 import Log from "./pages/Log";
 import LandingNames from "./pages/LandingNames";
 import LandingPassword from "./pages/LandingPassword";
+import AddAccount from "./API/AddAccount";
 
 
 
@@ -57,10 +58,10 @@ function App() {
           </Routes>
 
 
-          <Routes>
-            <Route path='/LazyPage' element={<LazyPage/>}>
+          {/* <Routes>
+            <Route path='/account' element={<AddAccount/>}>
             </Route> 
-          </Routes>
+          </Routes> */}
 
 
 
