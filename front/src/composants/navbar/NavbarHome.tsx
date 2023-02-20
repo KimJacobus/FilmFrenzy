@@ -101,12 +101,12 @@ const NavbarHome = () => {
                         {/* j'ai ajouté flex ici ?  */}
 
                 <div className="hidden space-x-2 md:flex md:mx-2">
-                    <a
-                        href="javascript:void(0)"
+                    <Link to="/UserProfile"
+                        
                         className="px-2 py-2 text-white rounded-full bg-blue-600 rounded-md-full shadow hover:bg-blue-500 "
                     >
                         User
-                    </a>
+                    </Link>
                     < Link
                         to="/"
                         className="px-2 py-2  text-white bg-red-600 rounded-md shadow hover:bg-red-500"

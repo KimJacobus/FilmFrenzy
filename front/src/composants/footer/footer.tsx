@@ -14,18 +14,18 @@ const Footer = () => {
                 },
                 {
                     name:"About Us",
-                    link: "/about-us",
+                    link: "#",
                 },
                {
                 
                 name:"Contact Us",
-                link: "/contact-us",
+                link: "#",
 
                },
                {
 
                 name:"Movies",
-                link: "/movies",
+                link: "#",
 
                },
                
@@ -63,22 +63,25 @@ const Footer = () => {
                 links: [
                     {
                         name:"Dashboard",
-                        link: "/dashboard",
+                        link: "/loginForm",
                     },
                     {
                         name:"My Favorites",
-                        link: "/my-favorite",
+                        link: "/loginForm",
+                        
                     },
                    {
                     
                     name:"Profile",
-                    link: "/profile",
+                    link: "/loginForm",
+
     
                    },
                    {
     
                     name:"Changes Password",
-                    link: "/change-password",
+                    link: "/SendEmail",
+
     
                    },
                    

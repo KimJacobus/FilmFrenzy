@@ -12,6 +12,7 @@ import NewPassword from "./composants/forgotpassword/NewPassword";
 import Log from "./pages/Log";
 import LandingNames from "./pages/LandingNames";
 import LandingPassword from "./pages/LandingPassword";
+import UserProfile from "./composants/user/userProfile";
 
 
 
@@ -72,6 +73,11 @@ function App() {
             </Route> 
           </Routes>
 
+          <Routes>
+            <Route path='/UserProfile' element={<UserProfile/>}>
+            </Route> 
+          </Routes>
+          
          
         </div>
       </div>
