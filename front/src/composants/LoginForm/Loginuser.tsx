@@ -1,13 +1,44 @@
-import NavbarSignIn from "../navbar/NavbarSingIn";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const LoginUser = () => {
 
 
-    const handleNext = (event: any) => {
-        event.preventDefault();
-        
-            // transition to other form 
+const [username, setUsername] = useState('')
+const [password, setPassword] = useState('')
+
+const navigate = useNavigate();
+
+
+
+const handleNext = (event: any) => {
+  event.preventDefault();
+  
+  
+  const user = {username, password}
+            
+            fetch('http://localhost:6868/api/auth/signin', {
+                method: 'POST', 
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(user)
+                
+            }).then(err => {
+              console.log(user);
+              console.log(err);
+           
+              if(err.status !== 200) {
+                  console.log(err);
+                  //add <p> in html to show error to user
+
+              } else  {
+                navigate('/home');
+                  
+              }
+          })
+
+      // do post, if you get status 200 ? everything okay, redirect 
+      // do post, if you get status 400, 500 something went wrong; block redirect throw error;  
+      // will have to check how to catch error, to then use them 
 
     }
 
@@ -40,7 +71,7 @@ const LoginUser = () => {
             border border-solid border-slate-600
             m-0
           focus:text-gray-700 focus:bg-white focus:border-slate-600 focus:outline-none" 
-          placeholder="Username"></input>
+          placeholder="Username" required value={username} onChange={(e) => setUsername(e.target.value)}></input>
       </div> <br />
       <div className="form-group mb-6">
         <input type="text" className="form-control
@@ -54,13 +85,13 @@ const LoginUser = () => {
           bg-zinc-800 bg-clip-padding
           border border-solid border-slate-600
           focus:text-gray-700 focus:bg-white focus:border-slate-600 focus:outline-none"
-          placeholder="Password"></input>
+          placeholder="Password"  required value={password} onChange={(e) => setPassword(e.target.value)}></input>
       </div>
         <br />
       <div className="form-group justify-center">
       
-      <Link to="/home">
-      <button type="submit" className="
+      {/* <Link to="/home"> */}
+      <button type="submit" onClick={handleNext} className="
       px-6
       py-2.5
       bg-red-800
@@ -74,7 +105,7 @@ const LoginUser = () => {
       focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
       active:bg-slate-900 active:shadow-lg"
       >Next</button>
-      </Link>
+      {/* </Link> */}
     </div>
    </div>
 
@@ -88,6 +119,7 @@ const LoginUser = () => {
 
 
      );
+    
 }
  
 export default LoginUser;

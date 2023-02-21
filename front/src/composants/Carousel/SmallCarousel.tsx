@@ -26,15 +26,28 @@ const SmallCarousel = () => {
 
 
 
+function nom(nom:string) {
+return nom = 'Transfusion';
+
+}
+
+
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/photos')
+    fetch('https://api.themoviedb.org/3/discover/movie?api_key=83a1629902bd9dbacb7cf2bcff2293ab&with_genres=18&language=fr-FR&')
     .then(res => {
       return res.json();
     })
     .then(data => {
       setItems(data);
       console.log(data);
+      const match = data.find(({title}) => title === 'Transfusion');
+console.log(match);
+
+      console.log(data.filter(nom))
+
+   
+
     })
   }, []);
   
@@ -77,8 +90,7 @@ const SmallCarousel = () => {
           key={i}
           
           
-          style={{backgroundImage: `url('${items.length > 0 ? items[1].url : ''})` }}  
-
+          style={{backgroundImage: `url('${items.length > 0 ? items[0] : ''})` }}  
 
 
 

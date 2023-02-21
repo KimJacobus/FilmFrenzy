@@ -38,7 +38,9 @@ const Password = () => {
                 method: 'POST',
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify(account)
-              }). then (() => {
+              }).then ((err) => {
+                  console.log(err);
+                  
               })
            
             }
@@ -58,6 +60,8 @@ const Password = () => {
 
         const user = {passwordOne, passwordTwo}
         sessionStorage.setItem('password', user.passwordOne);
+
+            
 
       navigate("/LoginForm")
 
