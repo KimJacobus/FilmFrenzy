@@ -5,18 +5,6 @@ import LazyImage from '../Carousel/LazyLoad/LazyImage';
 
 
 
-// interface item {
-//   albumId: number;
-//   id: number;
-//   title: string;
-//   url: string;
-//   thumbnailUrl: string;
-// }
-
-
-
-
-
 const SmallCarousel = () => {
 
 
@@ -24,13 +12,6 @@ const SmallCarousel = () => {
   const [activeItem, setActiveItem] = useState(null);
   const [items, setItems] = useState<any[]>([]);
   const [check, setCheck] = useState();
-
-
-function nom(nom:string) {
-return nom = 'Transfusion';
-
-}
-
 
 
   useEffect(() => {
@@ -42,21 +23,15 @@ return nom = 'Transfusion';
       setItems(data);
 
 // do filter options here ?
+      
+      const results = data.results
+      console.log(results)
 
-
-      //       const match = data.find({data.original_title}) => data.original_title === 'Transfusion');
-      // console.log(data);
-      
-      
-      
-      setCheck(data.results[0].poster_path);
-      
+      setCheck(results.poster_path);
     })
   }, []);
-  
 
 
-// console.log(check);
 
 
   console.log(items)
@@ -64,12 +39,17 @@ return nom = 'Transfusion';
     
     // console.log(items.results[0].poster_path);
 
-const film = "https://image.tmdb.org/t/p/original" + check ;
+const film = "https://image.tmdb.org/t/p/w400" + check ;
+
+
+  films = [{}]
+
+
+
 
 
   const handleClick = (index: any) => {
     if (activeItem === index) {
-
       setActiveItem(null)
       
     } else {
@@ -100,7 +80,6 @@ const film = "https://image.tmdb.org/t/p/original" + check ;
 
           
           key={i}
-          
           
           // style={{backgroundImage: `url('${items.length > 0 ?  film : ''})` }}  
 
