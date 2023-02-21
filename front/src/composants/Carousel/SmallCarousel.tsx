@@ -40,6 +40,10 @@ return nom = 'Transfusion';
     })
     .then(data => {
       setItems(data);
+
+// do filter options here ?
+
+
       //       const match = data.find({data.original_title}) => data.original_title === 'Transfusion');
       // console.log(data);
       
@@ -52,14 +56,15 @@ return nom = 'Transfusion';
   
 
 
-console.log(check);
+// console.log(check);
 
 
-  // console.log(items)
-  if(items) {
+  console.log(items)
+  // if(items) {
     
     // console.log(items.results[0].poster_path);
 
+const film = "https://image.tmdb.org/t/p/original" + check ;
 
 
   const handleClick = (index: any) => {
@@ -97,7 +102,9 @@ console.log(check);
           key={i}
           
           
-          style={{backgroundImage: `url('${items.length > 0 ? check : ''})` }}  
+          // style={{backgroundImage: `url('${items.length > 0 ?  film : ''})` }}  
+
+          style={{backgroundImage: `url(${film})`}}  
 
 
 
@@ -118,7 +125,6 @@ console.log(check);
   );
 
 
-}
 };
 
 export default SmallCarousel;
