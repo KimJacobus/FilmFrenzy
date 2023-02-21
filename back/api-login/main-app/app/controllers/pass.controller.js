@@ -10,7 +10,6 @@ const Op = db.Sequelize.Op;
 exports.resetPasswordEmail = async (req, res) => {
   var email = req.body.email;
 
-  //console.log(sendEmail(email, fullUrl));
   try {
     // Email
     var user = await User.findOne({
@@ -25,7 +24,6 @@ exports.resetPasswordEmail = async (req, res) => {
     }
 
     var token = randtoken.generate(20);
-
     var sent = sendEmail(email, token);
 
     if (sent != "0") {
@@ -42,7 +40,7 @@ exports.resetPasswordEmail = async (req, res) => {
     } else {
       return res.send({
         type: "error",
-        message: "Something goes to wrong. Please try again.",
+        message: "Something went wrong. Please try again.",
       });
     }
   } catch (error) {
@@ -73,6 +71,7 @@ exports.updatePassword = async (req, res) => {
     }
 
     user.password = password;
+    user.token = null;
     await user.save();
 
     res.send({
@@ -105,9 +104,9 @@ function sendEmail(email, token) {
     to: email,
     subject: "Reset Password",
     html:
-      '<p>You requested for reset password, kindly use this <a href="http://localhost:4000/reset-password?token=' +
+      '<h3>Dear FilmFriend,</h3><br><p>Your request for a new password is valid, please use this <a href="http://localhost:4000/reset-password?token=' +
       token +
-      '">link</a> to reset your password</p>',
+      '">link</a> to reset your password.</p>',
   };
 
   mail.sendMail(mailOptions, function (error, info) {

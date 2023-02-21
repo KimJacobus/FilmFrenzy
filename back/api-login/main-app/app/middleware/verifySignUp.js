@@ -3,8 +3,6 @@ const ROLES = db.ROLES;
 const User = db.user;
 
 checkDuplicateUsernameOrEmail = async (req, res, next) => {
-  console.log("i'm inside checkduplicateusernameoremail.");
-  console.log(req.body);
   try {
     // Username
     var user = await User.findOne({
@@ -12,7 +10,7 @@ checkDuplicateUsernameOrEmail = async (req, res, next) => {
         username: req.body.username,
       },
     });
-    console.log(user);
+
     if (user) {
       console.log("inside username already exist");
       return res.status(400).send({
@@ -21,7 +19,6 @@ checkDuplicateUsernameOrEmail = async (req, res, next) => {
     }
 
     // Email
-    console.log(user);
     user = await User.findOne({
       where: {
         email: req.body.email,
@@ -29,7 +26,6 @@ checkDuplicateUsernameOrEmail = async (req, res, next) => {
     });
 
     if (user) {
-      console.log("user email already in use.");
       return res.status(400).send({
         message: "Failed! Email is already in use!",
       });
@@ -37,7 +33,6 @@ checkDuplicateUsernameOrEmail = async (req, res, next) => {
 
     next();
   } catch (error) {
-    console.log(error);
     return res.status(500).send({
       message: "Couldn't validate username!",
       error: error.message,
