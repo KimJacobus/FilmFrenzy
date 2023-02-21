@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 require("dotenv").config();
+//import swaggerDocs from "./app/utils/swagger";
 
 const app = express();
 
@@ -16,19 +17,14 @@ function initial() {
     name: "user",
   });
 
-  // Role.create({
-  //   id: 2,
-  //   name: "moderator",
-  // });
-
   Role.create({
     id: 2,
     name: "admin",
   });
 }
 
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and Resync Db");
+db.sequelize.sync({force: true}).then(() => {
+  console.log("Resync Db");
   initial();
 });
 
@@ -46,11 +42,6 @@ app.use(
   })
 );
 
-// simple route
-// app.get("/", (req, res) => {
-//   res.json({ message: "Welcome to bezkoder application." });
-// });
-
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
@@ -60,4 +51,5 @@ require("./app/routes/pass.routes")(app);
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
+  //swaggerDocs(app, PORT);
 });
