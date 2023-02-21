@@ -31,12 +31,8 @@ const Create = () => {
 
                 } else  {
 
-
                 }
             })
-
-
-            
 
 
         }

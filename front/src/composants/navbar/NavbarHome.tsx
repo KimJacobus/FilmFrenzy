@@ -98,7 +98,6 @@ const NavbarHome = () => {
                     </div>
                 </div>
 
-                        {/* j'ai ajouté flex ici ?  */}
 
                 <div className="hidden space-x-2 md:flex md:mx-2">
                     <a

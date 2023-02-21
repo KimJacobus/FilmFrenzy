@@ -18,12 +18,10 @@ const Home = () => {
                 
 
 
-                <CatBar/>
             <SmallCarousel />
-                <CatBar/>
-            <SmallCarousel />
-                <CatBar/>
-            <SmallCarousel />
+
+
+
 
         </div>
 
