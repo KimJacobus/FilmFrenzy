@@ -5,7 +5,6 @@ const User = db.user;
 checkUserRegistered = async (req, res, next) => {
   var email = req.body.email;
 
-  //console.log(sendEmail(email, fullUrl));
   try {
     // Email
     var user = await User.findOne({
@@ -41,7 +40,6 @@ checkToken = async (req, res, next) => {
         token: token,
       },
     });
-    console.log(user);
     if (!user) {
       return res.status(400).send({
         type: "error",
@@ -50,7 +48,6 @@ checkToken = async (req, res, next) => {
     }
     next();
   } catch (error) {
-    console.log(error);
     return res.status(500).send({
       message: "Couldn't validate token!",
       error: error.message,
