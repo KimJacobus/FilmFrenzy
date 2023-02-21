@@ -2,6 +2,11 @@
 
 -----------------------------
 
+
+## Here's the live link : 
+
+[filmfriendzy](http://filmfriendzy.herokuapp.com/)
+
 ## L'équipe : 
 
 - Sebastien
@@ -53,7 +58,7 @@ Create streaming site inspired (Netflix, Hulu, Paramount+, Disney +, HBO max, Ap
         - [ ] categorie
 
 4. User Story:  As an user I  want to rate the films I watch
-    - [ ] Rating System on Movie show one  
+    - [ ] Rating System on Movie show one
 
 
 5. User Story: As an user I want to pay for my subscription
