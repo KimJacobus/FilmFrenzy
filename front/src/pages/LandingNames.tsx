@@ -1,8 +1,4 @@
-import NFBG from '../assets/pictures/NFBG.jpg';
-import NavbarHome from '../composants/navbar/NavbarHome';
 import NavbarSignUp from '../composants/navbar/NavbarSingUp';
-import LoginUser from '../composants/LoginForm/Loginuser';
-import Emailuser from '../composants/RegisterForm/Emailuser';
 import Footer from '../composants/footer/footer';
 import Names from '../composants/RegisterForm/Names';
 import salle from '../assets/pictures/salle.jpg';
@@ -34,6 +30,7 @@ const LandingNames = () => {
                 
 
                 <Names />
+                
                 <p className='jose text-sm lg:text-2xl text-white mb-1 text-center mt-7 '>Step 2/4</p>
                 
 

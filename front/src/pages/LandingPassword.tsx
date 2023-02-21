@@ -1,10 +1,5 @@
-import NFBG from '../assets/pictures/NFBG.jpg';
-import NavbarHome from '../composants/navbar/NavbarHome';
 import NavbarSignUp from '../composants/navbar/NavbarSingUp';
-import LoginUser from '../composants/LoginForm/Loginuser';
-import Emailuser from '../composants/RegisterForm/Emailuser';
 import Footer from '../composants/footer/footer';
-import Names from '../composants/RegisterForm/Names';
 import salle from '../assets/pictures/salle.jpg';
 import Password from '../composants/RegisterForm/Password';
 
