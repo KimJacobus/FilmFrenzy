@@ -1,6 +1,8 @@
-
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import SmallCarousel from "../Carousel/SmallCarousel";
+import Inputsearchbar  from "../LoginForm/Inputsearchbar"
+
 
 const NavbarHome = () => {
     const [navbar, setNavbar] = useState(false);
@@ -72,9 +74,9 @@ const NavbarHome = () => {
                             <li className="roboto text-white hover:text-indigo-200">
                                 <a href="javascript:void(0)">Animations</a>
                             </li>
-                            <li id="inputRecherche">
-                                 <input className="roboto placeholder:text-slate-200 focus:placeholder-slate-600 placeholder:text-center placeholder:focus bg-slate-600 focus:bg-sky-200  focus:outline-none  focus:border-slate-600 rounded text-slate-700"  placeholder="Recherche" type="text" name="Recherche"/>
-                            </li>
+
+
+                     
                             
                         </ul>
 
@@ -113,7 +115,24 @@ const NavbarHome = () => {
                         Log out
                     </Link>
                 </div>
+
+                        
+
+
             </div>
+
+            <div className="flex justify-center"id="inputRecherche">
+
+
+<Inputsearchbar>
+
+<SmallCarousel />
+
+</Inputsearchbar>
+
+
+
+</div>
         </nav>
     );
 };

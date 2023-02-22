@@ -58,9 +58,9 @@ const Landing = () => {
                 </div>
             </div>
 
-        <div>
+        {/* <div>
             <img src={screen} />
-        </div>
+        </div> */}
 
         <div className='bg-slate-900 border-t-2 border-red-600'>
             <div className='text-white text-center text-2xl mt-10 mb-10'><h1><b> Available on your favorite devices</b> </h1></div>

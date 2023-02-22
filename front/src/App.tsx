@@ -16,6 +16,7 @@ import Log from "./pages/Log";
 import LandingNames from "./pages/LandingNames";
 import LandingPassword from "./pages/LandingPassword";
 import AddAccount from "./API/AddAccount";
+import Inputsearchbar from "./composants/LoginForm/Inputsearchbar";
 
 
 
@@ -39,8 +40,10 @@ function App() {
         {/** route for the register  step 2 to step 3*/}
            
           <Routes>
+
             <Route path='/RegisterForm2' element={<LandingNames/>}>
             </Route> 
+
           </Routes>
 
         {/** route for the register  step 3 to step 3*/}
@@ -58,10 +61,10 @@ function App() {
           </Routes>
 
 
-          {/* <Routes>
-            <Route path='/account' element={<AddAccount/>}>
+          <Routes>
+            <Route path='/input' element={<Inputsearchbar/>}>
             </Route> 
-          </Routes> */}
+          </Routes>
 
 
 

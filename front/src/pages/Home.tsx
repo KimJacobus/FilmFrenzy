@@ -10,7 +10,10 @@ const Home = () => {
             <div className="absolute min-h-screen w-screen bg-zinc-800"> 
 
         <div className="Navbar mb-2">   
-            <NavbarHome/>
+
+            <NavbarHome />
+
+
             </div>
 
         <div className="lg:hidden">
