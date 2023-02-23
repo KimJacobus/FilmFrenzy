@@ -5,15 +5,21 @@ import LoginUser from './composants/LoginForm/Loginuser';
 import Landing from "./pages/Landing";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Switch } from "@mui/material";
+
 import NavbarHome from "./composants/navbar/NavbarHome";
 import NewEmail from "./composants/forgotpassword/sendMail";
 import NewPassword from "./composants/forgotpassword/NewPassword";
+
+import LazyPage from "./composants/Carousel/LazyLoad/LazyPage";
+
 import Log from "./pages/Log";
 import LandingNames from "./pages/LandingNames";
 import LandingPassword from "./pages/LandingPassword";
 import UserProfile from "./composants/user/userProfile";
 import UserAvatar from "./composants/user/usertest";
+import AddAccount from "./API/AddAccount";
+import Inputsearchbar from "./composants/LoginForm/Inputsearchbar";
+
 
 
 
@@ -36,8 +42,10 @@ function App() {
         {/** route for the register  step 2 to step 3*/}
            
           <Routes>
+
             <Route path='/RegisterForm2' element={<LandingNames/>}>
             </Route> 
+
           </Routes>
 
         {/** route for the register  step 3 to step 3*/}
@@ -50,16 +58,24 @@ function App() {
         {/** route for page log-In */}
               
           <Routes>
-            <Route path='/LoginForm' element={< Log/>}>
+            <Route path='/LoginForm' element={<Log/>}>
             </Route> 
           </Routes>
+
+
+          {/* <Routes>
+            <Route path='/input' element={<Inputsearchbar/>}>
+            </Route> 
+          </Routes> */}
 
 
 
         {/** route for the page*/}
           <Routes>
+            
             <Route path='/home' element={<Home/>}>
             </Route> 
+
           </Routes>
 
           {/**Route for forgot password */}

@@ -1,15 +1,77 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react"; 
+import { Link, useNavigate } from "react-router-dom";
 
 const Password = () => {
 
+  const [passwordOne, setpasswordOne ] = useState("");
+  const [passwordTwo, setpasswordTwo] = useState("");
 
 
-    const handleNext = (event: any) => {
-        event.preventDefault();
-        
-            // transition to other form 
+  const [account, setAccount]= useState({});
 
+  const navigate = useNavigate();
+
+
+        // POST to API
+
+        useEffect(() => {
+
+          const firstname = sessionStorage.getItem('firstname' );
+          const lastname = sessionStorage.getItem('lastname' );
+          const username = sessionStorage.getItem('username' );
+          const email = sessionStorage.getItem('email');
+          const password = sessionStorage.getItem('password');
+          
+
+          
+          if (firstname && lastname && username && email && password) {
+
+              setAccount({firstname, lastname, username, email, password });
+            
+            
+            console.log(account);
+    
+
+
+            if(account) {
+              fetch('http://localhost:6868/api/auth/signup', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json"},
+                body: JSON.stringify(account)
+              }).then ((err) => {
+                  console.log(err);
+                  
+              })
+           
+            }
+            else {
+              console.log("something is wrong");
+              
+            }
+          }
+
+          }, [passwordOne])
+          
+          
+          
+          const handlePassword = (e:any) => {
+            
+            if(passwordOne === passwordTwo) {
+
+        const user = {passwordOne, passwordTwo}
+        sessionStorage.setItem('password', user.passwordOne);
+
+            
+
+      navigate("/LoginForm")
+
+      } else {
+        e.preventDefault();
+
+        alert("passwords don't match")
     }
+
+  };
 
     return (  
     
@@ -24,7 +86,7 @@ const Password = () => {
 <div className="text-white">3/4</div>
 </div>
 
-  <form onSubmit={handleNext}>
+  <form>
     <div className="grid grid-cols-2 gap-4">
       <div className="form-group mb-6">
         <input type="text" className="
@@ -36,7 +98,7 @@ const Password = () => {
             border border-solid border-slate-600
             m-0
           focus:text-gray-700 focus:bg-white focus:border-slate-600 focus:outline-none" 
-          placeholder="Password"></input>
+          placeholder="Password" required value={passwordOne} onChange={(e) => setpasswordOne(e.target.value)}></input>
       </div>
       <div className="form-group mb-6">
         <input type="text" className="form-control
@@ -50,12 +112,12 @@ const Password = () => {
           bg-zinc-800 bg-clip-padding
           border border-solid border-slate-600
           focus:text-gray-700 focus:bg-white focus:border-slate-600 focus:outline-none"
-          placeholder="Password again"></input>
+          placeholder="Password again" required value={passwordTwo} onChange={(e) => setpasswordTwo(e.target.value)}></input>
       </div>
 
       <div className="form-group col-start-2 justify-self-end">
-      <Link to="/LoginForm">
-     <button type="submit" className="
+      {/* <Link to="" > */}
+     <button type="submit" onClick={handlePassword} className="
       px-6
       py-2.5
       bg-red-800
@@ -69,7 +131,7 @@ const Password = () => {
       focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
       active:bg-slate-900 active:shadow-lg"
       >Next Step</button>
-      </Link>
+      {/* </Link> */}
     </div>
    </div>
   </form>

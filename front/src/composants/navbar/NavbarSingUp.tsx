@@ -62,7 +62,7 @@ const NavbarSignUp = () => {
                         }`}
                     >
                        
-                        <div className="mt-3 space-y-2 md:hidden">
+                        <div className="mt-3 space-y-2 lg:hidden">
                     <Link
                         to="/LoginForm"
                         className="inline-block w-full px-4 py-2 text-center text-white bg-red-600 rounded-md shadow hover:bg-red-500"
@@ -72,7 +72,7 @@ const NavbarSignUp = () => {
                     <a
                     
 
-                        href="javascript:void(0)"
+                        href="#"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-400"
                     >
                         Sign up
