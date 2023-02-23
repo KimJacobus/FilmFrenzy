@@ -1,17 +1,24 @@
+import { Link, useNavigate } from "react-router-dom";
+import { useState} from "react";
 
-import { Link } from "react-router-dom";
 
 const Emailuser = () => {
 
+    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
+
+    const navigate = useNavigate();
 
 
-    const handleNext = (event: any) => {
-        event.preventDefault();
-        
-            // transition to other form 
-          
+    const handleUser = (e:any) => {
+      // e.preventDefault();
 
+const user = {email, username}
 
+      sessionStorage.setItem('email', user.email)
+      sessionStorage.setItem('username', user.username)
+
+      navigate('./RegisterForm2 ')
 
     }
 
@@ -29,7 +36,7 @@ const Emailuser = () => {
 <div className="text-white mb-3">1/4</div>
 </div>
 
-  <form onSubmit={handleNext}>
+  <form>
     <div className="grid grid-cols-2 gap-4">
       <div className="form-group mb-6">
         <input type="text" className="
@@ -41,7 +48,7 @@ const Emailuser = () => {
             border border-solid border-slate-600
             m-0
           focus:text-gray-700 focus:bg-white focus:border-slate-600 focus:outline-none" 
-          placeholder="Email"></input>
+          placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)}></input>
       </div>
       <div className="form-group mb-6">
         <input type="text" className="form-control
@@ -55,7 +62,7 @@ const Emailuser = () => {
           bg-zinc-800 bg-clip-padding
           border border-solid border-slate-600
           focus:text-gray-700 focus:bg-white focus:border-slate-600 focus:outline-none"
-          placeholder="Username"></input>
+          placeholder="username" required value={username} onChange={(e) => setUsername(e.target.value)}></input>
       </div>
 
       </div>
@@ -65,8 +72,8 @@ const Emailuser = () => {
       </h1>
 
 
-      <Link to="/RegisterForm2">                             
-          <button type="submit" className="
+      {/* <Link to="/RegisterForm2" >                              */}
+          <button type="submit" onClick={handleUser} className="
           px-6
           py-2.5
           bg-red-800
@@ -80,7 +87,7 @@ const Emailuser = () => {
           focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
           active:bg-slate-900 active:shadow-lg"
           >Next Step</button>
-      </Link>
+      {/* </Link> */}
 
     </div>
   </form>

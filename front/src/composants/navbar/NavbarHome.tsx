@@ -1,9 +1,45 @@
-
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import SmallCarousel from "../Carousel/SmallCarousel";
+import Inputsearchbar  from "../LoginForm/Inputsearchbar"
 
-const NavbarHome = () => {
+
+const NavbarHome = ({ onQueryChange }:any) => {
+    
     const [navbar, setNavbar] = useState(false);
+    const [query, setQuery] = useState("");
+    
+    const getTrending = (e:any) => {
+
+        const url = `https://api.themoviedb.org/3/${e.getAttribute('data-value')}?api_key=83a1629902bd9dbacb7cf2bcff2293ab&language=fr-FR`
+        
+        setQuery(url)
+        // console.log(e.getAttribute('data-value'));
+        // setQuery(e.firstChild.data)
+    }
+
+// action, comedy, romance 
+
+    const getClickedValue = (e:any) => {
+
+        const url = `https://api.themoviedb.org/3/discover/movie?api_key=83a1629902bd9dbacb7cf2bcff2293ab&with_genres=${e.getAttribute('data-value')}&language=fr-FR`
+
+        setQuery(url)
+    }
+
+
+    const handleQueryChange = (newQuery: string) => {
+        setQuery(newQuery);
+    };
+    
+    
+    useEffect(() => {
+        const newQuery = query;
+        setQuery(newQuery);
+        onQueryChange(newQuery);
+    }, [handleQueryChange]);
+    
+
 
     return (
         
@@ -59,24 +95,30 @@ const NavbarHome = () => {
                             navbar ? "block" : "hidden"
                         }`}
                     >
+
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                           <li className="text-white hover:text-indigo-200">
-                                <a href="/">Home</a>
+                            <li className="roboto text-white  hover:text-indigo-200 cursor-pointer">
+                                <a onClick={(e) => getTrending(e.target)} data-value='trending/all/day'>Trending</a>
                             </li>
-                            <li className="roboto text-white  hover:text-indigo-200">
-                                <a href="javascript:void(0)">Tv Show</a>
+                            <li className="roboto text-white hover:text-indigo-200 cursor-pointer">
+                            <a onClick={(e) => getClickedValue(e.target)} data-value='28'>Action</a>
                             </li>
-                            <li className="roboto text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Movies</a>
+                            <li className="roboto text-white hover:text-indigo-200 cursor-pointer">
+                            <a onClick={(e) => getClickedValue(e.target)} data-value='35'>Comedy</a>
                             </li>
-                            <li className="roboto text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Animations</a>
-                            </li>
-                            <li id="inputRecherche">
-                                 <input className="roboto placeholder:text-slate-200 focus:placeholder-slate-600 placeholder:text-center placeholder:focus bg-slate-600 focus:bg-sky-200  focus:outline-none  focus:border-slate-600 rounded text-slate-700"  placeholder="Recherche" type="text" name="Recherche"/>
+                            <li className="roboto text-white hover:text-indigo-200 cursor-pointer">
+                            <a onClick={(e) => getClickedValue(e.target)} data-value='878'>Sci-fi</a>
                             </li>
                             
                         </ul>
+
+
+
+
+
+
+
+
 
 
                         <div className="mt-3 space-y-2 md:hidden inline-block ">
@@ -88,7 +130,6 @@ const NavbarHome = () => {
                     </a>
                     <a
 
-                    //DELETE hrefs ? 
 
                         href="javascript:void(0)"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-red-600 rounded-md shadow hover:bg-red-500">
@@ -98,15 +139,14 @@ const NavbarHome = () => {
                     </div>
                 </div>
 
-                        {/* j'ai ajouté flex ici ?  */}
 
                 <div className="hidden space-x-2 md:flex md:mx-2">
-                    <a
-                        href="javascript:void(0)"
+                    <Link to="/UserProfile"
+                        
                         className="px-2 py-2 text-white rounded-full bg-blue-600 rounded-md-full shadow hover:bg-blue-500 "
                     >
                         User
-                    </a>
+                    </Link>
                     < Link
                         to="/"
                         className="px-2 py-2  text-white bg-red-600 rounded-md shadow hover:bg-red-500"
@@ -114,7 +154,21 @@ const NavbarHome = () => {
                         Log out
                     </Link>
                 </div>
+
+                        
+                <Inputsearchbar onQueryChange={handleQueryChange} />
+
+
             </div>
+
+            <div className="flex justify-center"id="inputRecherche">
+
+
+
+
+
+
+</div>
         </nav>
     );
 };
