@@ -15,6 +15,8 @@ import LazyPage from "./composants/Carousel/LazyLoad/LazyPage";
 import Log from "./pages/Log";
 import LandingNames from "./pages/LandingNames";
 import LandingPassword from "./pages/LandingPassword";
+import UserProfile from "./composants/user/userProfile";
+import UserAvatar from "./composants/user/usertest";
 import AddAccount from "./API/AddAccount";
 import Inputsearchbar from "./composants/LoginForm/Inputsearchbar";
 
@@ -88,6 +90,19 @@ function App() {
             </Route> 
           </Routes>
 
+          <Routes>
+            <Route path='/UserProfile' element={<UserProfile/>}>
+            </Route> 
+            
+          </Routes>
+          
+          <Routes>
+            
+            <Route path='/UserAvatar' element={<UserAvatar />}>
+              
+            </Route>
+          </Routes>
+          
          
         </div>
       </div>
