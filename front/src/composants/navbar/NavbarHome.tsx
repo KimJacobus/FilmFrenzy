@@ -5,23 +5,40 @@ import Inputsearchbar  from "../LoginForm/Inputsearchbar"
 
 
 const NavbarHome = ({ onQueryChange }:any) => {
-
+    
     const [navbar, setNavbar] = useState(false);
-
     const [query, setQuery] = useState("");
+    
+    const getTrending = (e:any) => {
+
+        const url = `https://api.themoviedb.org/3/${e.getAttribute('data-value')}?api_key=83a1629902bd9dbacb7cf2bcff2293ab&language=fr-FR`
+        
+        setQuery(url)
+        // console.log(e.getAttribute('data-value'));
+        // setQuery(e.firstChild.data)
+    }
+
+// action, comedy, romance 
+
+    const getClickedValue = (e:any) => {
+
+        const url = `https://api.themoviedb.org/3/discover/movie?api_key=83a1629902bd9dbacb7cf2bcff2293ab&with_genres=${e.getAttribute('data-value')}&language=fr-FR`
+
+        setQuery(url)
+    }
+
 
     const handleQueryChange = (newQuery: string) => {
-      setQuery(newQuery);
+        setQuery(newQuery);
     };
     
-
-
+    
     useEffect(() => {
         const newQuery = query;
         setQuery(newQuery);
         onQueryChange(newQuery);
-      }, [handleQueryChange]);
-  
+    }, [handleQueryChange]);
+    
 
 
     return (
@@ -78,24 +95,30 @@ const NavbarHome = ({ onQueryChange }:any) => {
                             navbar ? "block" : "hidden"
                         }`}
                     >
+
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                           <li className="text-white hover:text-indigo-200">
-                                <a href="/">Home</a>
+                            <li className="roboto text-white  hover:text-indigo-200 cursor-pointer">
+                                <a onClick={(e) => getTrending(e.target)} data-value='trending/all/day'>Trending</a>
                             </li>
-                            <li className="roboto text-white  hover:text-indigo-200">
-                                <a href="javascript:void(0)">Tv Show</a>
+                            <li className="roboto text-white hover:text-indigo-200 cursor-pointer">
+                            <a onClick={(e) => getClickedValue(e.target)} data-value='28'>Action</a>
                             </li>
-                            <li className="roboto text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Movies</a>
+                            <li className="roboto text-white hover:text-indigo-200 cursor-pointer">
+                            <a onClick={(e) => getClickedValue(e.target)} data-value='35'>Comedy</a>
                             </li>
-                            <li className="roboto text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Animations</a>
+                            <li className="roboto text-white hover:text-indigo-200 cursor-pointer">
+                            <a onClick={(e) => getClickedValue(e.target)} data-value='878'>Sci-fi</a>
                             </li>
-
-
-                     
                             
                         </ul>
+
+
+
+
+
+
+
+
 
 
                         <div className="mt-3 space-y-2 md:hidden inline-block ">
@@ -107,7 +130,6 @@ const NavbarHome = ({ onQueryChange }:any) => {
                     </a>
                     <a
 
-                    //DELETE hrefs ? 
 
                         href="javascript:void(0)"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-red-600 rounded-md shadow hover:bg-red-500">

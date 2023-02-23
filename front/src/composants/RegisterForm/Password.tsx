@@ -28,9 +28,7 @@ const Password = () => {
 
               setAccount({firstname, lastname, username, email, password });
             
-            
-            console.log(account);
-    
+                sessionStorage.clear();
 
 
             if(account) {
