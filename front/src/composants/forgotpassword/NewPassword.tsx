@@ -1,16 +1,31 @@
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NewPassword = () => {
 
-
+  const [token, setToken] = useState <string> ("");
+  const [passwordOne, setPasswordOne ] = useState <string> ("");
+  const [passwordTwo, setPasswordTwo ] = useState <string> ("");
 
     const handleNext = (event: any) => {
         event.preventDefault();
         
-            // transition to other form 
           
-
+          
+            const password={token, passwordOne, passwordTwo};
+            fetch("https://apilogin.herokuapp.com/update-password",{
+   
+             method:"POST",
+             headers: { "content-type": "application/json"},
+             body: JSON.stringify(password),
+   
+   
+            }).then ((err)=> {
+             console.log(err);
+   
+            })
+             
 
 
     }
@@ -39,7 +54,7 @@ const NewPassword = () => {
             border border-solid border-slate-600
             m-0
           focus:text-gray-700 focus:bg-white focus:border-slate-600 focus:outline-none" 
-          placeholder="New Password"></input>
+          placeholder="New Password" onChange={(e)=> setPasswordOne (e.target.value)} value={passwordOne}></input>
       </div>
       <div className="form-group mb-6">
         <input type="text" className="form-control
@@ -53,10 +68,10 @@ const NewPassword = () => {
           bg-zinc-800 bg-clip-padding
           border border-solid border-slate-600
           focus:text-gray-700 focus:bg-white focus:border-slate-600 focus:outline-none"
-          placeholder="New Password again"></input>
+          placeholder="New Password again" onChange={(e)=> setPasswordTwo (e.target.value)} value={passwordTwo}></input>
       </div>
-
-      <Link to="/loginForm">                             
+      <input type="hidden" name="" id="" onChange={(e)=> setToken (e.target.value)} value={token}/>
+             <div>                  
           <button type="submit" className="
           px-6
           py-4
@@ -70,8 +85,8 @@ const NewPassword = () => {
           hover:bg-slate-400 hover:shadow-lg
           focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
           active:bg-slate-900 active:shadow-lg"
-          >Submit</button>
-      </Link>
+          >Submit</button></div>   
+   
 
       </div>
       <div className="flex form-group justify-between">
