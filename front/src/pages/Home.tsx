@@ -16,7 +16,10 @@ const Home = () => {
     <div className="Home">
       <div className="absolute min-h-screen w-screen bg-zinc-800"> 
         <div className="Navbar mb-2">   
+          
           <NavbarHome onQueryChange={handleQueryChange}/>
+
+
         </div>
         <div className="lg:hidden">
           <SmallCarousel query={query} />

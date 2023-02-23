@@ -5,11 +5,11 @@ import Footer from "../footer/footer";
 
 const UserProfile = () => {
     return ( 
-      
         <div className="userprofil">
-
                 <div className="navbar">
-                    <NavbarHome />         
+
+                    {/* <NavbarHome />       */}
+
                 </div>
                 <div className="bg-slate-900 p-8"><br />
                     <div className="flex justify-center">

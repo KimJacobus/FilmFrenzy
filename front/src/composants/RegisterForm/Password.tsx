@@ -32,6 +32,9 @@ const Password = () => {
             console.log(account);
     
 
+                //sessionStorage.clear();
+
+
 
             if(account) {
               fetch('http://localhost:6868/api/auth/signup', {

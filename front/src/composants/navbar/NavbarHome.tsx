@@ -5,23 +5,40 @@ import Inputsearchbar  from "../LoginForm/Inputsearchbar"
 
 
 const NavbarHome = ({ onQueryChange }:any) => {
-
+    
     const [navbar, setNavbar] = useState(false);
-
     const [query, setQuery] = useState("");
+    
+    const getClickedValue = (e:any) => {
+
+        const url = `https://api.themoviedb.org/3/${e.getAttribute('data-value')}/all/day?api_key=83a1629902bd9dbacb7cf2bcff2293ab&language=fr-FR`
+        setQuery(url)
+
+
+        
+
+        // console.log(e.getAttribute('data-value'));
+        
+        // setQuery(e.firstChild.data)
+
+
+
+
+    }
+
+
 
     const handleQueryChange = (newQuery: string) => {
-      setQuery(newQuery);
+        setQuery(newQuery);
     };
     
-
-
+    
     useEffect(() => {
         const newQuery = query;
         setQuery(newQuery);
         onQueryChange(newQuery);
-      }, [handleQueryChange]);
-  
+    }, [handleQueryChange]);
+    
 
 
     return (
@@ -79,11 +96,8 @@ const NavbarHome = ({ onQueryChange }:any) => {
                         }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                           <li className="text-white hover:text-indigo-200">
-                                <a href="/">Home</a>
-                            </li>
-                            <li className="roboto text-white  hover:text-indigo-200">
-                                <a href="javascript:void(0)">Tv Show</a>
+                            <li className="roboto text-white  hover:text-indigo-200 cursor-pointer">
+                                <a onClick={(e) => getClickedValue(e.target)} data-value='trending'>Trending</a>
                             </li>
                             <li className="roboto text-white hover:text-indigo-200">
                                 <a href="javascript:void(0)">Movies</a>
@@ -107,7 +121,6 @@ const NavbarHome = ({ onQueryChange }:any) => {
                     </a>
                     <a
 
-                    //DELETE hrefs ? 
 
                         href="javascript:void(0)"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-red-600 rounded-md shadow hover:bg-red-500">

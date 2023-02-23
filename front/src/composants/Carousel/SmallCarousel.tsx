@@ -11,11 +11,27 @@ const SmallCarousel = (prop:any) => {
   const [query, setQuery] = useState<any>(prop.query)
 
   console.log(prop.query);
+  console.log(prop.query.length);
+
+
 
   // console.log(query);
   
   useEffect(() => {
-    setQuery(prop.query);
+    // between searchbar and clicked genre buttons on length or on type
+    
+    if(prop.query.length > 15) {
+      
+      setQuery(prop.query);
+
+    } else {
+
+      const url = 'https://api.themoviedb.org/3/search/movie?api_key=83a1629902bd9dbacb7cf2bcff2293ab&query=' + prop.query; 
+
+      setQuery(url + prop.query);
+
+    }
+    
   }, [prop.query]);
   
 
@@ -24,9 +40,11 @@ const SmallCarousel = (prop:any) => {
   useEffect(() => {
     
     
-    const url = 'https://api.themoviedb.org/3/search/movie?api_key=83a1629902bd9dbacb7cf2bcff2293ab&query=' + prop.query; 
     
-    console.log(url);
+
+    const url = query
+
+    // console.log(url);
     
     
     

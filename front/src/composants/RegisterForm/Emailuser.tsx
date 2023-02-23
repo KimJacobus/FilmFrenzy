@@ -14,14 +14,11 @@ const Emailuser = () => {
       // e.preventDefault();
 
 const user = {email, username}
-      
-
 
       sessionStorage.setItem('email', user.email)
       sessionStorage.setItem('username', user.username)
 
       navigate('./RegisterForm2 ')
-
 
     }
 
