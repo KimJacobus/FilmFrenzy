@@ -56,22 +56,24 @@ function App() {
         {/** route for page log-In */}
               
           <Routes>
-            <Route path='/LoginForm' element={< Log/>}>
+            <Route path='/LoginForm' element={<Log/>}>
             </Route> 
           </Routes>
 
 
-          <Routes>
+          {/* <Routes>
             <Route path='/input' element={<Inputsearchbar/>}>
             </Route> 
-          </Routes>
+          </Routes> */}
 
 
 
         {/** route for the page*/}
           <Routes>
+            
             <Route path='/home' element={<Home/>}>
             </Route> 
+
           </Routes>
 
           {/**Route for forgot password */}

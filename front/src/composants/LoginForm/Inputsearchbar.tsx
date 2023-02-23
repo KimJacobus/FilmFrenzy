@@ -1,34 +1,32 @@
-import Input from '@mui/material/Input';
-import Button from '@mui/material/Button';
-import { useState, createContext } from 'react';
-import ReactDom from "react-dom/client";
-import NavbarHome from '../navbar/NavbarHome';
+import { IconButton } from '@mui/material';
+import Button  from '@mui/material/Button';
+import { useState } from 'react';
 
-const Inputsearchbar = (props:any) => {
+type Props = {
+  onQueryChange: (newQuery: string) => void;
+};
 
-    const [query, setQuery] = useState<string>();
-    
-    const queryContext = createContext(query)
+const Inputsearchbar = ({ onQueryChange }: Props) => {
+  const [query, setQuery] = useState("");
 
-    
-    return ( 
-        
-        <queryContext.Provider value={query}>
+  const handleInputChange = () => {
+    const newQuery = query;
+    setQuery(newQuery);
+    onQueryChange(newQuery);
+  };
 
-        <div className="InputSearchBar">
-
-        <Input className='bg-slate-600 w-96 h-10 rounded my-10 mr-5' value={query}
-        onChange={(e) => setQuery(e.target.value)}    
-        ></Input>
-
-        <Button className="" variant="contained" color='info'>Search</Button>
-
-        </div>
-
-            <NavbarHome />
-        </queryContext.Provider>
-
-     );
-}
+  return (
+    <div className="flex InputSearchBar mx-2 justify-center">
+      <input
+        type="text"
+        className='bg-slate-600 w-80 h-10 rounded my-1 mr-5'
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <Button
+variant="contained" color="secondary" onClick={handleInputChange}>Click</Button>
+    </div>
+  );
+};
 
 export default Inputsearchbar;

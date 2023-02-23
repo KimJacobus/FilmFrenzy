@@ -1,31 +1,47 @@
-import { useSnapCarousel } from 'react-snap-carousel';
-import { useState, useEffect, useContext } from 'react';
-import Inputsearchbar from '../LoginForm/Inputsearchbar';
+import { useSnapCarousel } from 'react-snap-carousel'
+import { useState, useEffect } from 'react'
 
 
-const SmallCarousel = () => {
+const SmallCarousel = (prop:any) => {
 
 
-  const { scrollRef } = useSnapCarousel();
-  const [activeItem, setActiveItem] = useState(null);
-  const [items, setItems] = useState<any[]>([]);
-  const query = useContext(queryContext); 
+  const { scrollRef } = useSnapCarousel()
+  const [activeItem, setActiveItem] = useState(null)
+  const [items, setItems] = useState<any[]>([])
+  const [query, setQuery] = useState<any>(prop.query)
 
+  console.log(prop.query);
 
-  console.log({query})
+  // console.log(query);
+  
+  useEffect(() => {
+    setQuery(prop.query);
+  }, [prop.query]);
+  
 
 
 
   useEffect(() => {
+    
+    
+    const url = 'https://api.themoviedb.org/3/search/movie?api_key=83a1629902bd9dbacb7cf2bcff2293ab&query=' + prop.query; 
+    
+    console.log(url);
+    
+    
+    
     const fetchImages = async () => {
-      const response = await fetch('https://api.themoviedb.org/3/search/movie?api_key=83a1629902bd9dbacb7cf2bcff2293ab&query=marvel');
+      
+      
+
+      const response = await fetch(url);
       const data = await response.json();
       const results = data.results.map((item: any) => item);
       setItems(results);
 
     };
     fetchImages();
-  }, []);
+  }, [query]);
 // put depency here ? for refreshing on search 
 
 

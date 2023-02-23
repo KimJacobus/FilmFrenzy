@@ -1,11 +1,28 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SmallCarousel from "../Carousel/SmallCarousel";
 import Inputsearchbar  from "../LoginForm/Inputsearchbar"
 
 
-const NavbarHome = () => {
+const NavbarHome = ({ onQueryChange }:any) => {
+
     const [navbar, setNavbar] = useState(false);
+
+    const [query, setQuery] = useState("");
+
+    const handleQueryChange = (newQuery: string) => {
+      setQuery(newQuery);
+    };
+    
+
+
+    useEffect(() => {
+        const newQuery = query;
+        setQuery(newQuery);
+        onQueryChange(newQuery);
+      }, [handleQueryChange]);
+  
+
 
     return (
         
@@ -117,6 +134,7 @@ const NavbarHome = () => {
                 </div>
 
                         
+                <Inputsearchbar onQueryChange={handleQueryChange} />
 
 
             </div>
@@ -124,11 +142,7 @@ const NavbarHome = () => {
             <div className="flex justify-center"id="inputRecherche">
 
 
-<Inputsearchbar>
 
-<SmallCarousel />
-
-</Inputsearchbar>
 
 
 

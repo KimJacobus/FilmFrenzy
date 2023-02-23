@@ -20,7 +20,7 @@ const user = {email, username}
       sessionStorage.setItem('email', user.email)
       sessionStorage.setItem('username', user.username)
 
-      navigate('./RegisterForm2')
+      navigate('./RegisterForm2 ')
 
 
     }
