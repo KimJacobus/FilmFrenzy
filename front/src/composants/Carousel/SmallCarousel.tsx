@@ -1,63 +1,60 @@
-import { useSnapCarousel } from 'react-snap-carousel';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import React,{ useState, useEffect } from 'react';
-import LazyImage from '../Carousel/LazyLoad/LazyImage';
+import { useSnapCarousel } from 'react-snap-carousel'
+import { useState, useEffect } from 'react'
 
 
-
-interface item {
-  albumId: number;
-  id: number;
-  title: string;
-  url: string;
-  thumbnailUrl: string;
-}
+const SmallCarousel = (prop:any) => {
 
 
+  const { scrollRef } = useSnapCarousel()
+  const [activeItem, setActiveItem] = useState(null)
+  const [items, setItems] = useState<any[]>([])
+  const [query, setQuery] = useState<any>(prop.query)
 
+  console.log(prop.query);
 
-
-const SmallCarousel = () => {
-
-
-  const { scrollRef } = useSnapCarousel();
-  const [activeItem, setActiveItem] = useState(null);
-  const[items, setItems] = useState<item[]>([]);
-
-
-
-
+  // console.log(query);
+  
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/photos')
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      setItems(data);
-      console.log(data);
-    })
-  }, []);
+    setQuery(prop.query);
+  }, [prop.query]);
   
 
 
 
+  useEffect(() => {
+    
+    
+    const url = 'https://api.themoviedb.org/3/search/movie?api_key=83a1629902bd9dbacb7cf2bcff2293ab&query=' + prop.query; 
+    
+    console.log(url);
+    
+    
+    
+    const fetchImages = async () => {
+      
+      
+
+      const response = await fetch(url);
+      const data = await response.json();
+      const results = data.results.map((item: any) => item);
+      setItems(results);
+
+    };
+    fetchImages();
+  }, [query]);
+// put depency here ? for refreshing on search 
+
 
   const handleClick = (index: any) => {
     if (activeItem === index) {
-
-      setActiveItem(null)
-      
+      setActiveItem(null);
     } else {
-
-    setActiveItem(index)
+      setActiveItem(index);
     }
   };
 
-
-
   return (
     <ul
-
       ref={scrollRef}
       style={{
         display: 'flex',
@@ -65,41 +62,29 @@ const SmallCarousel = () => {
         scrollSnapType: 'x mandatory',
         scrollbarWidth: 'none',
         cursor: 'grab',
-        userSelect: 'none'
+        userSelect: 'none',
       }}
     >
-
-
-      {Array.from({ length: 10 }).map((_, i) => (
-          <div
-
-          
+      {items.map((item, i) => (
+        <div
           key={i}
-          
-          
-          style={{backgroundImage: `url('${items.length > 0 ? items[1].url : ''})` }}  
+          style={{
 
+            backgroundImage: `url('https://image.tmdb.org/t/p/w400${item.poster_path}')`,
 
-
-
+          }}
           className={`righteous flex bg-cyan-400 text-3xl w-[250px] h-[350px] rounded-md m-5 shrink-0 text-white 
           justify-center items-center cursor-grab  select-none transition-all duration-500
-         
-          
           ${activeItem === i ? 'active: w-[350px] active: h-[600px] transition-transform' : ''}`}
-          onClick={() => handleClick(i)}>
-          Item {i}
-
-
+          onClick={() => handleClick(i)}
+        >
+          <h1 className="text-xl text-center">{item.title}</h1> 
         </div>
       ))}
-
-
     </ul>
   );
 };
-
-export default SmallCarousel;
+export default SmallCarousel
 
 
 

@@ -22,13 +22,17 @@ const Create = () => {
                 body: JSON.stringify(user)
                 
             }).then((err) => {
-                
                 console.log(user);
                 console.log(err);
+             
+                if(err.status !== 200) {
+                    console.log(err);
+                    
+
+                } else  {
+
+                }
             })
-
-
-            
 
 
         }
