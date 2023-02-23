@@ -21,16 +21,16 @@ const Home = () => {
 
 
         </div>
-        <div className="lg:hidden">
+        <div className="Carousel">
+
           <SmallCarousel query={query} />
+
+
 
 
           
         </div>
-        <div className="lg:inline hidden">
-          {/* <BigCarousel query={query} /> */}
-          <BigCarousel />
-        </div>
+     
       </div>
     </div>
   );
