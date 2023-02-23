@@ -1,17 +1,26 @@
-
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const NewEmail = () => {
 
-
+const [email, setEmail] = useState<string>('');
 
     const handleNext = (event: any) => {
-        event.preventDefault();
-        
-            // transition to other form 
-          
+        event.preventDefault()
+          const user = {email}
+
+          //fetch time 
+
+          fetch('https://apilogin.herokuapp.com/reset-password-email', {
+            method: 'POST',
+            headers: { 'Content-Type': "application/json" },
+            body: JSON.stringify(user)
+          }).then((err) => {
+
+            console.log(err)
 
 
+          })
 
     }
 
@@ -40,9 +49,9 @@ const NewEmail = () => {
             border border-solid border-slate-600
             m-0
           focus:text-gray-700 focus:bg-white focus:border-slate-600 focus:outline-none" 
-          placeholder="Email Account"></input>
+          placeholder="Email Account" onChange={(e) => setEmail(e.target.value)} value={email}></input>
       </div>
-      <Link to="#">                             
+      {/* <Link to="#">                              */}
           <button type="submit" className="
           px-6
           py-4
@@ -57,7 +66,7 @@ const NewEmail = () => {
           focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0
           active:bg-slate-900 active:shadow-lg"
           >Send</button>
-      </Link>
+      {/* </Link> */}
 
       </div>
       <div className="flex form-group justify-between">
