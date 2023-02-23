@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
-require("dotenv").config();
+
 //import swaggerDocs from "./app/utils/swagger";
 
 const app = express();
@@ -48,8 +48,7 @@ require("./app/routes/user.routes")(app);
 require("./app/routes/pass.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.NODE_DOCKER_PORT || 8080;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
-  //swaggerDocs(app, PORT);
 });
