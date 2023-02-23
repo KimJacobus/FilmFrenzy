@@ -2,49 +2,35 @@ import NavbarHome from "../composants/navbar/NavbarHome";
 import SmallCarousel from "../composants/Carousel/SmallCarousel";
 import BigCarousel from "../composants/Carousel/BigCarousel";
 import CatBar from "../composants/Carousel/CatBar";
+import Inputsearchbar from "../composants/LoginForm/Inputsearchbar";
+import { useState } from 'react';
 
 const Home = () => {
-    return (
-        <div className="Home">
-      
-            <div className="absolute min-h-screen w-screen bg-zinc-800"> 
+  const [query, setQuery] = useState("");
 
+  const handleQueryChange = (newQuery: string) => {
+    setQuery(newQuery);
+  };
+
+  return (
+    <div className="Home">
+      <div className="absolute min-h-screen w-screen bg-zinc-800"> 
         <div className="Navbar mb-2">   
-            <NavbarHome/>
-            </div>
-
+          <NavbarHome onQueryChange={handleQueryChange}/>
+        </div>
         <div className="lg:hidden">
-                
-                
+          <SmallCarousel query={query} />
 
 
-            <SmallCarousel />
-
-
-
-
+          
         </div>
-
-
         <div className="lg:inline hidden">
-
-
-                <CatBar/>
-            <BigCarousel />
-                <CatBar/>
-            <BigCarousel />
-
-
-
+          {/* <BigCarousel query={query} /> */}
+          <BigCarousel />
         </div>
-
-
-
-            </div>
-        </div>
-
-
-      );
+      </div>
+    </div>
+  );
 }
  
 export default Home;
