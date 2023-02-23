@@ -1,14 +1,18 @@
 const express = require("express");
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./app/config/swagger.json');
 const cors = require("cors");
 const cookieSession = require("cookie-session");
+require ('dotenv').config();
 
 //import swaggerDocs from "./app/utils/swagger";
 
 const app = express();
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(cors());
 
-const db = require("./app/models");
+const db = require("./app/models/index");
 const Role = db.role;
 
 function initial() {
