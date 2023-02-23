@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/index");
 const User = db.user;
 
 /* check user is registered by its email */

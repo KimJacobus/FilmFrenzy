@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/index");
 const User = db.user;
 const randtoken = require("rand-token");
 const nodemailer = require("nodemailer");

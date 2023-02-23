@@ -1,0 +1,83 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API REST Documentation",
+        "version": "1.0.0",
+        "license": {
+            "name": "ISC"
+        },
+        "description": "API qui gere le signup/signin/signout,le login et le reset password avec un JWT"
+    },
+    "tags":[
+        {
+          "name": "authentication",
+          "description":"API qui gere le signup/signin/signout"
+        },
+        {
+            "name": "authorization",
+          "description":"API qui gere le role de l'utilisateur"
+        },
+        {
+            "name": "RESET/UPDATE",
+            "description":"API qui gere le reset et l'update du password"
+        }
+    ],
+    "paths": {
+        "/api/auth/signup": {
+            "post": {
+                "tags":["authentication"],
+                "summary": "/api/auth/signup",
+                "responses": {}
+            }
+        },
+        "/api/auth/signin": {
+            "post": {
+                "tags":["authentication"],
+                "summary": "/api/auth/signin",
+                "responses": {}
+            }
+        },
+        "/api/auth/signout": {
+            "post": {
+                "tags":["authentication"],
+                "summary": "/api/auth/signout",
+                "responses": {}
+            }
+        },
+        "/api/test/all": {
+            "get": {
+                "tags":["authorization"],
+                "summary": "/api/test/all",
+                "responses": {}
+            }
+        },
+        "/api/test/user": {
+            "get": {
+                "tags":["authorization"],
+                "summary": "/api/test/user",
+                "responses": {}
+            }
+        },
+        "/api/test/admin": {
+            "get": {
+                "tags":["authorization"],
+                "summary": "/api/test/admin",
+                "responses": {}
+            }
+        },
+        "/reset-password-email": {
+            "post": {
+                "tags":["RESET/UPDATE"],
+                "summary": "/reset-password-email",
+                "responses": {}
+            }
+        },
+        "/update-password": {
+            "post": {
+                "tags":["RESET/UPDATE"],
+                "summary": "/update-password",
+                "responses": {}
+            }
+        }
+    }
+}

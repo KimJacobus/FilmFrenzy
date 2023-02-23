@@ -10,12 +10,12 @@ const sequelize = new Sequelize(
     dialect: config.dialect,
     operatorsAliases: false,
 
-    pool: {
-      max: config.pool.max,
-      min: config.pool.min,
-      acquire: config.pool.acquire,
-      idle: config.pool.idle
-    }
+      pool: {
+       max: config.pool.max,
+        min: config.pool.min,
+        acquire: config.pool.acquire,
+        idle: config.pool.idle
+      }
   }
 );
 
