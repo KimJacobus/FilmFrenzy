@@ -4,23 +4,16 @@ import SmallCarousel from "../Carousel/SmallCarousel";
 import Inputsearchbar  from "../LoginForm/Inputsearchbar"
 
 
-const NavbarHome = ({ onQueryChange }:any) => {
+const NavbarUser = ({ onQueryChange }:any) => {
 
     const [navbar, setNavbar] = useState(false);
 
-    const [query, setQuery] = useState("");
+   
 
-    const handleQueryChange = (newQuery: string) => {
-      setQuery(newQuery);
-    };
     
 
 
-    useEffect(() => {
-        const newQuery = query;
-        setQuery(newQuery);
-        onQueryChange(newQuery);
-      }, [handleQueryChange]);
+  
   
 
 
@@ -134,9 +127,7 @@ const NavbarHome = ({ onQueryChange }:any) => {
                 </div>
 
                         
-                <Inputsearchbar onQueryChange={handleQueryChange} />
-
-
+                
             </div>
 
             <div className="flex justify-center"id="inputRecherche">
@@ -150,4 +141,4 @@ const NavbarHome = ({ onQueryChange }:any) => {
         </nav>
     );
 };
-export default NavbarHome;
+export default NavbarUser;

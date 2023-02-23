@@ -6,15 +6,23 @@ const Names = () => {
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
+  const [error, setError] =useState ("");
 
   const navigate = useNavigate();
 
 
-    const handleNames = () => {
-        
-const names = {firstname, lastname}
+    const handleNames = (e:any) => {
+      e.preventDefault();
+         // Vérifier si les champs sont remplis
+    if (!firstname || !lastname) {
+      setError("Please enter your firstname and lastname.");
+      return;
+  }   
+  
 
-        sessionStorage.setItem('firstname', names.firstname)
+    const names = {firstname, lastname}
+
+      sessionStorage.setItem('firstname', names.firstname)
       sessionStorage.setItem('lastname', names.lastname)
 
       navigate('/RegisterForm3')
@@ -65,6 +73,7 @@ const names = {firstname, lastname}
           focus:text-gray-700 focus:bg-white focus:border-slate-600 focus:outline-none"
           placeholder="Last name" required value={lastname} onChange={(e) => setLastname(e.target.value)}></input>
       </div>
+      {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
 
       <div className="form-group col-start-2 justify-self-end">
       {/* <Link to="/RegisterForm3" > */}

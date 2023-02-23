@@ -1,6 +1,10 @@
 import NavbarHome from "../navbar/NavbarHome";
 import avatar from '../../assets/pictures/avatar.jpg';
 import Footer from "../footer/footer";
+import NavbarUser from "../navbar/NavbarUser";
+import { Link } from "react-router-dom";
+import arrow from "../../assets/pictures/arrow.jpg"
+
 
 
 const UserProfile = () => {
@@ -9,9 +13,22 @@ const UserProfile = () => {
         <div className="userprofil">
 
                 <div className="navbar">
-                    <NavbarHome />         
+                    <NavbarUser/>        
                 </div>
-                <div className="bg-slate-900 p-8"><br />
+                 <div className="bg-slate-900 p-7">
+                    <div>
+                        <button className="">
+                            <Link to="/home"> 
+                                <div className="flex items-center">
+                                <img src={arrow} alt="back" className="w-11 rounded-full md:w-20" />
+                                <h3 className="text-white ml-2">Home</h3>
+                                </div>
+                            </Link>
+                     </button>
+                  </div>
+
+
+                        <br />
                     <div className="flex justify-center">
                         <h1 className="text-red-700 flex justify-center text-2xl border border-solid border-red-600 rounded-full py-7 bg-slate-800 w-72"> 
                             My Account  
