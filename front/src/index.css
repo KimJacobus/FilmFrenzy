@@ -1,47 +1,41 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
-
+@tailwind utilities;
 
 /*custom fonts*/
 
-
 @font-face {
-  font-family: 'righteous';
-  src: url('./assets/fonts/righteous.ttf') format('truetype');
+  font-family: "righteous";
+  src: url("./assets/fonts/righteous.ttf") format("truetype");
 }
 
 .righteous {
-font-family: 'righteous';
+  font-family: "righteous";
 }
 
-
-
-
 @font-face {
-  font-family: 'jose';
-  src: url('./assets/fonts/jose.ttf') format('truetype');
+  font-family: "jose";
+  src: url("./assets/fonts/jose.ttf") format("truetype");
 }
 
 .jose {
-font-family: 'jose';
+  font-family: "jose";
 }
 
 @font-face {
-  font-family: 'roboto';
-  src: url('./assets/fonts/Roboto-Light.ttf') format('truetype');
+  font-family: "roboto";
+  src: url("./assets/fonts/Roboto-Light.ttf") format("truetype");
 }
 
 .roboto {
-font-family: 'roboto';
+  font-family: "roboto";
 }
 
-
 @font-face {
-  font-family: 'varela';
-  src: url('./assets/fonts/VarelaRound-Regular.ttf') format('truetype');
+  font-family: "varela";
+  src: url("./assets/fonts/VarelaRound-Regular.ttf") format("truetype");
 }
 
 .varela {
-font-family: 'varela';
+  font-family: "varela";
 }

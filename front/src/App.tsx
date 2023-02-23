@@ -1,7 +1,7 @@
-import Names from "./composants/RegisterForm/Names"
-import Password from "./composants/RegisterForm/Password"
+import Names from "./composants/RegisterForm/Names";
+import Password from "./composants/RegisterForm/Password";
 import Home from "./pages/Home";
-import LoginUser from './composants/LoginForm/Loginuser';
+import LoginUser from "./composants/LoginForm/Loginuser";
 import Landing from "./pages/Landing";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -20,100 +20,71 @@ import UserAvatar from "./composants/user/usertest";
 import AddAccount from "./API/AddAccount";
 import Inputsearchbar from "./composants/LoginForm/Inputsearchbar";
 
-
-
-
 function App() {
   return (
-
-    <Router> 
+    <Router>
       <div className="App">
-        
-        <div className="content"> 
-        {/** route for the register and the first page for website*/}
-         
+        <div className="content">
+          {/** route for the register and the first page for website*/}
+
           <Routes>
-            <Route path='/' element={<Landing/>}>
-            </Route> 
-          </Routes>
-       
-
-
-        {/** route for the register  step 2 to step 3*/}
-           
-          <Routes>
-
-            <Route path='/RegisterForm2' element={<LandingNames/>}>
-            </Route> 
-
+            <Route path="/" element={<Landing />}></Route>
           </Routes>
 
-        {/** route for the register  step 3 to step 3*/}
-            
+          {/** route for the register  step 2 to step 3*/}
+
           <Routes>
-            <Route path='/RegisterForm3' element={<LandingPassword/>}>
-            </Route> 
+            <Route path="/RegisterForm2" element={<LandingNames />}></Route>
           </Routes>
 
-        {/** route for page log-In */}
-              
+          {/** route for the register  step 3 to step 3*/}
+
           <Routes>
-            <Route path='/LoginForm' element={<Log/>}>
-            </Route> 
+            <Route path="/RegisterForm3" element={<LandingPassword />}></Route>
           </Routes>
 
+          {/** route for page log-In */}
+
+          <Routes>
+            <Route path="/LoginForm" element={<Log />}></Route>
+          </Routes>
 
           {/* <Routes>
             <Route path='/input' element={<Inputsearchbar/>}>
             </Route> 
           </Routes> */}
 
-
-
-        {/** route for the page*/}
+          {/** route for the page*/}
           <Routes>
-            
-            <Route path='/home' element={<Home/>}>
-            </Route> 
-
+            <Route path="/home" element={<Home />}></Route>
           </Routes>
 
           {/**Route for forgot password */}
 
           <Routes>
-            <Route path='/SendEmail' element={<NewEmail/>}>
-            </Route> 
+            <Route path="/SendEmail" element={<NewEmail />}></Route>
           </Routes>
 
           <Routes>
-            <Route path='/NewPassword' element={<NewPassword/>}>
-            </Route> 
+            <Route path="/NewPassword" element={<NewPassword />}></Route>
           </Routes>
 
           <Routes>
-            <Route path='/UserProfile' element={<UserProfile/>}>
-            </Route> 
-            
+            <Route path="/UserProfile" element={<UserProfile />}></Route>
           </Routes>
-          
+
           <Routes>
-            
-            <Route path='/UserAvatar' element={<UserAvatar />}>
-              
-            </Route>
+            <Route path="/UserAvatar" element={<UserAvatar />}></Route>
           </Routes>
-          
-         
         </div>
       </div>
-    </Router>      
-  ) ;
+    </Router>
+  );
 }
-export default App
+export default App;
 
-
-
-{/*
+{
+  /*
 listes component :
 {
  <---------- Landing --------------> 
@@ -151,9 +122,3 @@ listes component :
 <body className="bg-slate-grey">
 }*/
 }
-
-
-
-
-  
-  

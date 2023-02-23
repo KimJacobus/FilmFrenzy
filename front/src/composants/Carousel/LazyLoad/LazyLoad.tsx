@@ -1,6 +1,5 @@
-import React,{ useEffect, useState } from 'react';
-import LazyImage from './LazyImage';
-
+import React, { useEffect, useState } from "react";
+import LazyImage from "./LazyImage";
 
 interface item {
   albumId: number;
@@ -10,50 +9,34 @@ interface item {
   thumbnailUrl: string;
 }
 
-
-
-
-
 const LazyLoad = () => {
+  const [items, setItems] = useState<item[]>([]);
 
-const[items, setItems] = useState<item[]>([]);
-
-
-
-useEffect(() => {
-  fetch('https://jsonplaceholder.typicode.com/photos')
-  .then(res => {
-    return res.json();
-  })
-  .then(data => {
-    setItems(data);
-    // console.log(data);
-  })
-}, []);
-
-
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/photos")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setItems(data);
+        // console.log(data);
+      });
+  }, []);
 
   return (
-
-
     <div>
       <h1>My Component</h1>
 
       {items.length > 0 ? (
-        <LazyImage src={items[0].url} alt='garfield' />
-        ) : (
+        <LazyImage src={items[0].url} alt="garfield" />
+      ) : (
         <div>Loading...</div>
       )}
     </div>
-
   );
 };
 
 export default LazyLoad;
-
-
-
-
 
 // useEffect(() => {
 //   const fetchItems = async () => {
@@ -64,9 +47,7 @@ export default LazyLoad;
 //    fetchItems();
 // }, []);
 
-
-
-// const image = {alt:'alt', height:'180px', width: '200px', src: NFBG, caption: 'whatever'}; 
+// const image = {alt:'alt', height:'180px', width: '200px', src: NFBG, caption: 'whatever'};
 
 //   <div>
 //     <LazyLoadImage
@@ -77,13 +58,9 @@ export default LazyLoad;
 //     <span>{image.caption}</span>
 //   </div>
 
-
 // const Lazy = ({ NFBG }) => (
 
-
 // <img src={NFBG}> </img>
-
-
 
 // );
 // export default Lazy;

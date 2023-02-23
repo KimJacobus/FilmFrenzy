@@ -1,15 +1,12 @@
-import {LazyLoadImage} from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/opacity.css';
-
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 
 // type LazyProps = {
-//   src : string; 
-//   alt: string; 
+//   src : string;
+//   alt: string;
 // }
 
-
-const LazyImage = ({ src, alt }:any) => {
+const LazyImage = ({ src, alt }: any) => {
   return (
     <LazyLoadImage
       alt={alt}
@@ -20,6 +17,5 @@ const LazyImage = ({ src, alt }:any) => {
     />
   );
 };
-
 
 export default LazyImage;

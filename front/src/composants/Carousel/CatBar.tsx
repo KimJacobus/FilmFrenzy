@@ -1,62 +1,43 @@
 import { useState } from "react";
 
-
-
 // GET nom des categories via fetch, put into prop
 
-
-
 const CatBar = () => {
-    // fake array 
-    
-    const PickId : number = 1;
+  // fake array
 
-const cat = [
-    { title: 'my new category', genre: 'action',  id: 1},
-    { title: 'my horror category', genre: 'horror',  id: 2},
-    { title: 'my comedy category', genre: 'comedy',  id: 3}
-]; 
+  const PickId: number = 1;
 
-    return (
+  const cat = [
+    { title: "my new category", genre: "action", id: 1 },
+    { title: "my horror category", genre: "horror", id: 2 },
+    { title: "my comedy category", genre: "comedy", id: 3 },
+  ];
 
+  return (
+    // variable
 
-// variable 
+    <div>
+      {cat
+        .filter((cat) => cat.id == 1)
+        .map((filtCat) => (
+          <li key={filtCat.id}>{filtCat.genre}</li>
+        ))}
+    </div>
 
+    // <div className="CatBar">
 
-        <div>
-            
-            {cat.filter(cat => cat.id == 1 ).map(filtCat => (
+    // {cat.filter((category => category.id === {PickId}).map(filterCat => (
 
-                <li key={filtCat.id}>
+    //     <div className="flex bg-slate-900 text-white" key={filterCat.id}>
 
+    //         <h2>{filterCat.title}</h2>
 
-                    {filtCat.genre}
+    //         <div><h1 className="jose text-1xl p-1">{filterCat.genre}</h1></div>
+    //     </div>
+    // )))}}
 
-                </li>
-            ))}
+    // </div>
+  );
+};
 
-        </div>
-
-
-
-
-
-        // <div className="CatBar">
-
-        // {cat.filter((category => category.id === {PickId}).map(filterCat => (
-
-        //     <div className="flex bg-slate-900 text-white" key={filterCat.id}>
-
-        //         <h2>{filterCat.title}</h2>
-
-        //         <div><h1 className="jose text-1xl p-1">{filterCat.genre}</h1></div>
-        //     </div>
-        // )))}}
-
-        // </div>
-
-
-      );
-}
- 
 export default CatBar;
