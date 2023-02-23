@@ -38,15 +38,9 @@ const SmallCarousel = (prop:any) => {
 
 
   useEffect(() => {
-    
-    
-    
 
     const url = query
 
-    // console.log(url);
-    
-    
     
     const fetchImages = async () => {
       
@@ -93,7 +87,7 @@ const SmallCarousel = (prop:any) => {
           }}
           className={`righteous flex bg-cyan-400 text-3xl w-[250px] h-[350px] rounded-md m-5 shrink-0 text-white 
           justify-center items-center cursor-grab  select-none transition-all duration-500
-          ${activeItem === i ? 'active: w-[350px] active: h-[600px] transition-transform' : ''}`}
+          ${activeItem === i ? 'active: w-screen h-[37rem] transition-transform' : ''}`}
           onClick={() => handleClick(i)}
         >
           <h1 className="text-xl text-center">{item.title}</h1> 
