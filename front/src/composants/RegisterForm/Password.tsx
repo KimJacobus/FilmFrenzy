@@ -12,64 +12,63 @@ const Password = () => {
   const navigate = useNavigate();
 
 
-        // POST to API
-
+        const fetchAccount = async () => {
+          const settings = {
+            method: 'POST',
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify(account)
+            
+          };
+          try {
+            const response =  await fetch('http://localhost:6868/api/auth/signup', settings); 
+          } catch (err){
+            console.log(err);
+          }
+        }
+        
         useEffect(() => {
 
-          const firstname = sessionStorage.getItem('firstname' );
-          const lastname = sessionStorage.getItem('lastname' );
-          const username = sessionStorage.getItem('username' );
-          const email = sessionStorage.getItem('email');
-          const password = sessionStorage.getItem('password');
-          
+            const firstname = sessionStorage.getItem('firstname' );
+            const lastname = sessionStorage.getItem('lastname' );
+            const username = sessionStorage.getItem('username' );
+            const email = sessionStorage.getItem('email');
+            const password = sessionStorage.getItem('password');
 
-          
+               
           if (firstname && lastname && username && email && password) {
 
-              setAccount({firstname, lastname, username, email, password });
-            
-                sessionStorage.clear();
-
-
-            if(account) {
-              fetch('http://localhost:6868/api/auth/signup', {
-                method: 'POST',
-                headers: { "Content-Type": "application/json"},
-                body: JSON.stringify(account)
-              }).then ((err) => {
-                  console.log(err);
-                  
-              })
-           
-            }
-            else {
-              console.log("something is wrong");
-              
-            }
-          }
-
-          }, [passwordOne])
+            setAccount({firstname, lastname, username, email, password });
           
-          
-          
-          const handlePassword = (e:any) => {
-            
-            if(passwordOne === passwordTwo) {
+              // sessionStorage.clear();
+        }
 
-        const user = {passwordOne, passwordTwo}
-        sessionStorage.setItem('password', user.passwordOne);
+      }, [passwordOne]);
+      
+      
+      
+      
+      
+      const handlePassword = (e:any) => {
+        
+        if(passwordOne === passwordTwo) {
+          
+          const user = {passwordOne, passwordTwo}
+          
+          sessionStorage.setItem('password', user.passwordOne);
+          
+          fetchAccount();
 
-            
+
 
       navigate("/LoginForm")
 
       } else {
         e.preventDefault();
-
         alert("passwords don't match")
     }
+  }
 
-  };
+
 
     return (  
     
