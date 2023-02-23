@@ -14,7 +14,7 @@ const Password = () => {
 
         // POST to API
 
-        useEffect(() => {
+        const ClickHandle = () => {
 
           const firstname = sessionStorage.getItem('firstname' );
           const lastname = sessionStorage.getItem('lastname' );
@@ -28,7 +28,7 @@ const Password = () => {
 
               setAccount({firstname, lastname, username, email, password });
             
-                sessionStorage.clear();
+                // sessionStorage.clear();
 
 
             if(account) {
@@ -48,7 +48,7 @@ const Password = () => {
             }
           }
 
-          }, [passwordOne])
+          }
           
           
           
@@ -58,7 +58,8 @@ const Password = () => {
 
         const user = {passwordOne, passwordTwo}
         sessionStorage.setItem('password', user.passwordOne);
-
+                
+        ClickHandle()
             
 
       navigate("/LoginForm")

@@ -10,6 +10,11 @@ const NewEmail = () => {
         
             // transition to other form 
           
+// fetch 
+// post mail = mail 
+
+
+
 
 
 
